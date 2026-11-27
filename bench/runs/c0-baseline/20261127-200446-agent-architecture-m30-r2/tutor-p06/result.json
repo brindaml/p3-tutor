@@ -1,0 +1,152 @@
+{
+  "duration_api_ms": 28462,
+  "stop_reason": "end_turn",
+  "session_id": "1128b56d-25be-4c74-a1a0-30c86c370fc4",
+  "total_cost_usd": 0.1664853,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 28023,
+    "cache_read_input_tokens": 142202,
+    "output_tokens": 2826,
+    "output_tokens_details": {
+      "thinking_tokens": 773
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 28023,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 661,
+        "cache_read_input_tokens": 38372,
+        "cache_creation_input_tokens": 656,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 656
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 2826,
+      "cacheReadInputTokens": 142202,
+      "cacheCreationInputTokens": 28023,
+      "webSearchRequests": 0,
+      "costUSD": 0.15459620000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 773,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 28023,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 14621,
+      "outputTokens": 854,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.0118891,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 316,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Picture a **repair expert sitting in a closed room**. They know a lot, but they have no phone or computer and can't leave. All they can do is read papers slid under the door and write notes back. Outside is a **helper** who can actually go and do things.\n\nSay you ask, \"Can my bike be fixed by Saturday?\"\n\n1. The helper slides in your question, plus a **menu of things they can do**, such as \"Check parts stock: tells you whether a part is on the shelf. Needs the part name.\"\n2. The expert writes a slip: \"Please check parts stock for *rear brake cable*.\"\n3. **The expert has checked nothing yet.** They've only *asked*.\n4. The helper reads the slip, goes to the shelf and finds two cables.\n5. The helper adds that result to the papers and slides them back in.\n6. The expert reads them, then either writes another slip or writes your answer.\n\nThe general idea is that **tool calling is how a model asks for something to be done.** The expert is the model, the helper is the program around it, each menu entry is a **tool description**, and a slip is a **tool call**. The model chooses and asks; the program carries it out. With some built-in tools, the AI provider runs that program for you ([how tool use works](https://platform.claude.com/docs/agents-and-tools/tool-use/how-tool-use-works)). Tools your team writes are run by your program.\n\n**Where the analogy breaks:** a real expert would remember the earlier papers. A model keeps nothing between calls, so each time, the program must send the relevant history again. Also, a model can write a bad slip, such as one with a wrong detail, so your program should check requests, especially before booking equipment.\n\n**Your turn:** for \"Book me the 3D printer Monday at 2,\" who is the expert, who is the helper, what might the slip say, and has anything been booked when the slip is written?\n\nIf it's still fuzzy, tell me which step loses you. I can also make this a short lesson. Your two attempts at quiz 0001 haven't been graded yet, so I can grade them if you like.",
+  "ttft_ms": 1024,
+  "type": "result",
+  "duration_ms": 28622,
+  "uuid": "78d696c4-50f4-45c0-87de-4cc9e1807bf0",
+  "ttft_stream_ms": 535,
+  "time_to_request_ms": 55,
+  "first_content_frame_ms": 535,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 2826,
+      "cacheReadInputTokens": 142202,
+      "cacheCreationInputTokens": 28023,
+      "webSearchRequests": 0,
+      "costUSD": 0.15459620000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 773,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 28023,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 14621,
+      "outputTokens": 854,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.0118891,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 316,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-25T09:27:13.347Z"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who decides the next step?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A system's control flow is what settles which step happens next and when the work is finished. In which of these designs does the model, rather than the code your team wrote, own the control flow?",
+      "options": [
+        {"id": "a", "text": "Code calls the model three times, always in the same set order"},
+        {"id": "b", "text": "Code has the model label each request, then runs that label's steps"},
+        {"id": "c", "text": "Code has the model redraft until a check passes, at most thrice"},
+        {"id": "d", "text": "Code lets the model choose each next tool until the model finishes"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "For every machine question, your program does the same thing: it searches the manuals, sends the question and the pages it found to the model, and shows the model's reply to the student. Is this design a workflow or an agent? Answer with one word."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every equipment booking must go the same way: check the student's training record, then check the calendar, then book only if both checks pass. The student's choice of machine and time arrives from a form. Which design is the best choice for this job?",
+      "options": [
+        {"id": "a", "text": "An agent with all three tools, told that order in its prompt"},
+        {"id": "b", "text": "Code that runs the three steps in order, checking each result"},
+        {"id": "c", "text": "An agent with all three tools, free to pick its own order"},
+        {"id": "d", "text": "An agent with all three tools, plus a limit of three steps"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your team can afford to build an agent for only one of these jobs. For which job is there the strongest reason to use an agent instead of a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Writing a weekly usage report from the same five database queries"},
+        {"id": "b", "text": "Answering the same opening-hours question that dozens of students ask daily"},
+        {"id": "c", "text": "Diagnosing a failed 3D print, where each finding decides the next check"},
+        {"id": "d", "text": "Summarizing a long safety manual, then translating the summary into Spanish"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "You are comparing two designs for manual questions. In design A, your code searches the manuals and then calls the model once to write the answer. In design B, the model is first called and requests a manual search, your code runs it, and the model is called again with the result and writes the answer. Assume every question goes exactly this way. For 300 questions, how many more model calls does design B make than design A?",
+      "unit": "model calls"
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "Your fixed workflow for sorting students' emails to the makerspace is cheap and does well on most of your test questions. A teammate wants to replace it with an agent because agents are more advanced. In one or two sentences, what should the team see from a comparison of the two before agreeing to switch?"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 28676,
+  "stop_reason": "end_turn",
+  "session_id": "66804f73-743b-4710-8d32-aec28d603138",
+  "total_cost_usd": 0.1591802,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 27855,
+    "cache_read_input_tokens": 104242,
+    "output_tokens": 3732,
+    "output_tokens_details": {
+      "thinking_tokens": 1671
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 27855,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 651,
+        "cache_read_input_tokens": 36976,
+        "cache_creation_input_tokens": 1884,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1884
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3732,
+      "cacheReadInputTokens": 104242,
+      "cacheCreationInputTokens": 27855,
+      "webSearchRequests": 0,
+      "costUSD": 0.1591802,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1671,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 27855,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Picture a brilliant advisor shut in a room. The only way in or out is a slot in the door for paper. Outside is a helper who follows fixed rules and can run certain errands.\n\nYou pass in a question: \"Is the campus library open Sunday?\" With it goes a **menu of errands**. One reads: \"Check opening hours. Use this to find when a building is open. Tell me the building and the day.\"\n\nThe advisor can't go and look. So they send out a slip: \"Please check opening hours. Building: library. Day: Sunday.\"\n\nThe helper reads the slip, does the errand and finds \"1 pm to 6 pm.\" The helper adds that to the folder holding everything so far and passes the folder back in. The advisor reads it and either sends out another slip or writes the final answer: \"Yes, from 1 to 6.\"\n\nHere's how the story maps to the real terms:\n- **Advisor:** the language model.\n- **Helper:** the ordinary program around the model.\n- **Menu:** the **tool definitions**, which give each tool's name, what it's for and what details it needs.\n- **Slip:** a **tool call**. It's only a request, so writing it doesn't do the errand.\n- **What the helper brings back:** the **tool result**.\n\nSo **the model asks, and the program does.**\n\nThe analogy breaks down in one important place. A real advisor would remember the last slip, but the model carries no memory from one call to the next. It knows what it learned in training, plus what's in the folder this time. For it to know about an earlier visit, the program has to save that information and put it in the folder.\n\nAlso, a menu doesn't guarantee a good slip. The model can pick the wrong errand or fill in a detail wrong.\n\n**Your turn:** use your makerspace assistant for a request to book the 3D printer. Who does the booking, what might the slip say, and how does the assistant find out whether it worked? Answer in your own words, no code.\n\nYour two attempts at quiz 0001 haven't been graded yet. If you'd like feedback on them, ask me to grade them.",
+  "ttft_ms": 1092,
+  "type": "result",
+  "duration_ms": 28863,
+  "uuid": "54861389-2644-469d-baad-31f975325daa",
+  "ttft_stream_ms": 604,
+  "time_to_request_ms": 74,
+  "first_content_frame_ms": 604,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 3732,
+      "cacheReadInputTokens": 104242,
+      "cacheCreationInputTokens": 27855,
+      "webSearchRequests": 0,
+      "costUSD": 0.1591802,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1671,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 27855,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-25T09:27:13.347Z"
+}

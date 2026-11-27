@@ -1,0 +1,48 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "In a workflow, paths written in code decide the order of the model and tool calls; in an agent, the model directs its own steps and tool use. The program runs the tools in both (a; thinking the model runs them is M4), a workflow can also call a model many times (c), and the prompt's length does not move control (d, M1).",
+      "distractors": {"a": "M4", "d": "M1"}
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "The code fixes the sequence, including who gets emailed; the model only does work inside two of the steps. Using a model or several tools does not make it an agent (a, b). Option d has the right label but the wrong reason: in an agent too, the program runs the tools and the model only requests them."
+    },
+    {
+      "id": "q3",
+      "answer": "Workflow: the model only picks a label, and the team's code decides which fixed steps run for each label.",
+      "accepted": [
+        "Workflow, because the program's code controls what happens next: it maps each label to a fixed path that the team wrote.",
+        "It is a workflow. The code owns the control flow; the model's label only selects among paths defined in code."
+      ],
+      "rationale": "This is routing, a workflow pattern: the model's output chooses a branch, but the branches and their steps are predefined in code. Full credit needs 'workflow' and that code defines the paths or what follows each label. 'Workflow' with no reason, or with a wrong one, is partial. 'Agent' because the model makes a choice is wrong."
+    },
+    {
+      "id": "q4",
+      "answer": "d",
+      "rationale": "In troubleshooting, the number and order of steps cannot be predicted, since each finding decides the next check; that is where model-directed control earns its extra cost. The other three jobs follow steps that can be written in code in advance."
+    },
+    {
+      "id": "q5",
+      "answer": "A fixed workflow: the steps are known in advance, so it is more predictable and cheaper than an agent.",
+      "accepted": [
+        "A workflow, because it does the same steps in the same order reliably and uses fewer model calls, which saves budget.",
+        "Use a fixed workflow. Code guarantees the training check happens before booking, and it costs less to run."
+      ],
+      "rationale": "Full credit: chooses a workflow and gives two valid, distinct reasons tied to this case. Examples are predictability or consistency; code guaranteeing the order, such as training checked before booking; lower model cost or latency; easier testing and debugging; less room for compounding errors; and the fixed steps leaving no need for model-directed control. A workflow with only one valid reason is partial, as is a workflow with two reasons plus a wrong claim such as 'workflows never make mistakes'. Choosing an agent is wrong."
+    },
+    {
+      "id": "q6",
+      "answer": "No, it is a workflow: the code fixes the three steps and their order, even though later calls use earlier output.",
+      "accepted": [
+        "No. The program, not the model, decides what happens next, so it is a workflow however many model calls it makes.",
+        "Disagree: it is a fixed chain. The model's output changes what the next step works on, not which step comes next."
+      ],
+      "rationale": "This is prompt chaining. Full credit: disagrees and explains that the sequence is fixed by the code (or that the model does not choose the next step or when to stop). The number of calls, and later calls reading earlier output, change the content, not who owns the control flow. 'No' without a valid reason is partial; agreeing is wrong."
+    }
+  ]
+}

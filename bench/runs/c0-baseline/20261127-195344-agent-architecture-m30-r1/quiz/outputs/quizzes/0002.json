@@ -1,0 +1,61 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A system's control flow is the order of its steps, including what happens next and when it stops. A workflow and an agent can both use a language model and tools. What tells them apart?",
+      "options": [
+        {"id": "a", "text": "Whether the model or the program runs the code inside each tool"},
+        {"id": "b", "text": "Whether the model or the program's own code chooses the next steps"},
+        {"id": "c", "text": "Whether the system calls its model once or calls it many times"},
+        {"id": "d", "text": "Whether the system's prompt is short or spells out a long role"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "For every report of a broken machine, your program does the same things. It has the model pull the machine name and problem out of the student's message. The program's code then saves the report, checks the calendar for upcoming bookings on that machine, and emails any students who have one. Finally, it has the model write a reply. What is this?",
+      "options": [
+        {"id": "a", "text": "An agent, because a model reads each request and writes each reply"},
+        {"id": "b", "text": "An agent, because it uses several tools and calls a model twice"},
+        {"id": "c", "text": "A workflow, because the code fixes which step comes after which"},
+        {"id": "d", "text": "A workflow, because the model never runs any of the tools itself"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In your assistant, a model first labels each message as \"manual question\" or \"booking\". The program's code then sends the message down one of two paths, each a fixed series of steps that your team wrote. Is this a workflow or an agent? Answer with that word, then explain in one sentence who controls what happens next."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your team has a small model budget. Which of these makerspace jobs is the strongest case for an agent instead of a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Cancelling a booking: find it, check it is the student's, then delete it"},
+        {"id": "b", "text": "Sending reminders: each morning, list that day's bookings and message each one"},
+        {"id": "c", "text": "Answering hours questions: look up the posted hours, then write a short reply"},
+        {"id": "d", "text": "Troubleshooting a bad print: each check's result decides what to look into next"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A teammate says, \"Booking equipment should be handled by an agent, because agents are more advanced.\" Every booking needs the same steps in the same order: check training, check the calendar, then book. In one or two sentences, say which design you would choose and give two reasons that matter for this project."
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A program always runs three steps: a model drafts an answer from a manual page, a model checks the draft against that page, and a model rewrites the draft using the check's comments. A teammate calls it an agent because it makes three model calls and the last two react to earlier output. Do you agree? In one or two sentences, explain why or why not."
+    }
+  ]
+}

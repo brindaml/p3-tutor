@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Tuesday a student tells your assistant that their capstone part is aluminum, which the model could not have learned in training. The program saves this nowhere except that chat's history. On Friday it starts a new chat with an empty history, using the same model through a stateless API, with no tools or other source holding the statement. What does the model have available about Tuesday's statement?",
+      "options": [
+        {"id": "a", "text": "It recalls it, since the same model heard it"},
+        {"id": "b", "text": "It recalls it, since training updates after chats"},
+        {"id": "c", "text": "Nothing, because no part carried it into this call"},
+        {"id": "d", "text": "Nothing yet, until the window has more free room"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent's first model call reads 2,000 tokens. The model writes a 100-token tool request, and the tool returns 400 tokens. The second call makes another 100-token tool request, and that tool returns 1,400 tokens. The third call writes the final answer. Each call receives all earlier input, tool requests and results, with nothing else added or removed. What is the total number of input tokens across all three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O3",
+      "stem": "At step 2 of one task, a tool returns a passage from a manual. At step 4, the model uses an exact detail from that passage without searching again. The model API is stateless and your program manages the history. In one sentence, what must your program have done to make this possible?"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Manuals for several machines are split into short chunks. A search about the vinyl cutter returns a chunk that reads only: \"Set this to the lowest level before starting.\" The returned text does not show which machine or setting it means, although the original manual's headings do. Which change most directly fixes this?",
+      "options": [
+        {"id": "a", "text": "Label each chunk with its machine and section"},
+        {"id": "b", "text": "Split each manual into even shorter text chunks"},
+        {"id": "c", "text": "Tell the model to guess the missing details"},
+        {"id": "d", "text": "Use a model with a larger context window"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "On Monday your agent saved a note to a file: \"Student's project is a drone frame.\" In one sentence, what must happen for the model to use that note when answering in a new session on Thursday?"
+    }
+  ]
+}

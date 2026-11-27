@@ -1,0 +1,41 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "d",
+      "rationale": "Only in d does the model decide which step comes next and when the work is done. In a, b and c the code fixes the path: a set order, branches written in advance (the model only picks the label), or a loop whose exit rule the code sets. Several calls, a model's choice of branch, or a loop do not by themselves make an agent."
+    },
+    {
+      "id": "q2",
+      "answer": "workflow",
+      "accepted": ["a workflow", "fixed workflow", "a fixed workflow", "it is a workflow"],
+      "rationale": "The code sets the same path for every question, and the model only fills in one step. Calling this an agent suggests that using a model plus search is thought to be enough to make one."
+    },
+    {
+      "id": "q3",
+      "answer": "b",
+      "rationale": "The steps and their order are known in advance and must always hold, so code should own them: it is predictable and can enforce both checks before booking. A prompt (a) asks for the order but does not enforce it, free choice (c) gives up the requirement, and a step limit (d) caps the number of steps without fixing their order or requiring the checks to pass."
+    },
+    {
+      "id": "q4",
+      "answer": "c",
+      "rationale": "In diagnosis, the number and order of steps depend on what is found along the way, so they are hard to write in advance. The report (a) and the summary then translation (d) have fixed steps, and a frequently repeated question (b) is predictable: volume or length alone is no reason for an agent."
+    },
+    {
+      "id": "q5",
+      "answer": 300,
+      "tolerance": 0,
+      "rationale": "A makes 1 call per question and B makes 2, so B makes 1 extra call per question, or 300 extra (600 against 300). An answer of 600 gives B's total instead of the difference. An answer of 0 may mean the call that requests the tool was not counted."
+    },
+    {
+      "id": "q6",
+      "answer": "Evidence on the same test questions that the agent does measurably better, by enough to justify its extra cost, delay and risk of errors.",
+      "accepted": [
+        "The agent gives clearly better results on the same tests, and the improvement is worth the added cost.",
+        "A measured improvement over the workflow that is worth the extra cost and latency."
+      ],
+      "rationale": "Add complexity only when it demonstrably improves outcomes, since agentic systems often trade cost and latency for performance. Full credit needs both a demonstrated improvement and that it is worth the cost or other downsides (naming one of cost, delay or error risk is enough). Only one of those two parts is partial. Accepting the switch because agents are more advanced or flexible is wrong. Source: Anthropic, Building effective agents, https://www.anthropic.com/engineering/building-effective-agents"
+    }
+  ]
+}

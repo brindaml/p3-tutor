@@ -1,0 +1,411 @@
+{
+  "run_id": "20261127-194053-agent-architecture-m30-r1",
+  "scored_at": "2026-11-27T19:47:44Z",
+  "judge_model": "claude-sonnet-5-5",
+  "solver_models": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
+  ],
+  "offline": false,
+  "no_model": false,
+  "jobs": {
+    "teach": {
+      "scenario": "teach",
+      "status": "ok",
+      "objective": "O3",
+      "requested_minutes": 30.0,
+      "warnings": [],
+      "ok": true,
+      "error": null,
+      "lesson": "lessons/0001-context-and-memory.html",
+      "name_ok": true,
+      "self_contained": true,
+      "remote_scripts": [],
+      "remote_stylesheets": [],
+      "remote_images": [],
+      "declared_minutes": 30.0,
+      "declared_objective": "O3",
+      "minutes_declared_ok": true,
+      "objective_declared_ok": true,
+      "words": 3705,
+      "est_minutes": 24.7,
+      "length_ratio": 0.823,
+      "length_ok": true,
+      "links": [
+        {
+          "url": "https://anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+          "status": "ok",
+          "code": 200
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+          "status": "ok",
+          "code": 200
+        },
+        {
+          "url": "https://developers.openai.com/api/docs/guides/conversation-state",
+          "status": "ok",
+          "code": 200
+        },
+        {
+          "url": "https://platform.claude.com/docs/en/claude_api_primer",
+          "status": "ok",
+          "code": 200
+        },
+        {
+          "url": "https://www.anthropic.com/engineering/contextual-retrieval",
+          "status": "ok",
+          "code": 200
+        },
+        {
+          "url": "https://discuss.huggingface.co/c/beginners/5",
+          "status": "ok",
+          "code": 200
+        }
+      ],
+      "dead_links": 0,
+      "judge": {
+        "facts": [
+          {
+            "id": "F3.1",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.2",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.3",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.4",
+            "present": false,
+            "correct": true
+          },
+          {
+            "id": "F3.5",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.6",
+            "present": true,
+            "correct": true
+          }
+        ],
+        "misconceptions_asserted": [],
+        "level_fit": 4,
+        "notes": "No listed fact is stated inaccurately. F3.4 is only partly covered: the lesson gives cost, caching and degraded accuracy as reasons to manage context even under the limit, but never says that more context adds to a call's time. The level suits a Python-literate beginner, with key terms explained and concrete examples and token arithmetic that build on the agent loop. Some passages are dense or assume more than this learner knows, such as the asides on linked calls and beta history storage, the passing mentions of reasoning tokens and BM25, and the amount of material packed into 30 minutes."
+      },
+      "model_scored": true,
+      "facts_present": 0.8333,
+      "facts_correct": 0.8333
+    },
+    "quiz": {
+      "scenario": "quiz",
+      "status": "ok",
+      "objective": "O4",
+      "warnings": [],
+      "ok": true,
+      "error": null,
+      "quiz": "quizzes/0002.json",
+      "key": "keys/0002.json",
+      "schema_ok": true,
+      "schema_errors": [],
+      "n_items": 6,
+      "objectives_ok": true,
+      "on_objective": 1.0,
+      "solvers": {
+        "claude-sonnet-5-5": {
+          "error": null,
+          "answered": 6
+        },
+        "claude-haiku-5-5": {
+          "error": null,
+          "answered": 6
+        }
+      },
+      "items": [
+        {
+          "id": "q1",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "b",
+          "answers": {
+            "claude-sonnet-5-5": "b",
+            "claude-haiku-5-5": "b"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q2",
+          "type": "short",
+          "objective": "O4",
+          "key": "A workflow, because your code fixes the steps that can run; the model only picks which predefined path is taken.",
+          "answers": {
+            "claude-sonnet-5-5": "It is a workflow, because your code fixes the steps for each label, and the model only picks the label and does work within those preset steps",
+            "claude-haiku-5-5": "Workflow because code fixes the steps for each label and the model never chooses the next step"
+          },
+          "match": {
+            "claude-sonnet-5-5": null,
+            "claude-haiku-5-5": null
+          },
+          "solvers_agree": null
+        },
+        {
+          "id": "q3",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "c",
+          "answers": {
+            "claude-sonnet-5-5": "c",
+            "claude-haiku-5-5": "c"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q4",
+          "type": "numeric",
+          "objective": "O4",
+          "key": 12,
+          "answers": {
+            "claude-sonnet-5-5": 12,
+            "claude-haiku-5-5": 12
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q5",
+          "type": "short",
+          "objective": "O4",
+          "key": "Who decides the next step (who owns the control flow)? It is an agent if the model decides during the run which steps or tools come next, and not if code fixes them in advance.",
+          "answers": {
+            "claude-sonnet-5-5": "Who decides which step or tool call comes next and when to stop: it is an agent if the model decides this at run time based on earlier results, rather than code fixing it in advance",
+            "claude-haiku-5-5": "Does the model itself choose which step or tool runs next rather than code fixing the order; if it does, it is an agent"
+          },
+          "match": {
+            "claude-sonnet-5-5": null,
+            "claude-haiku-5-5": null
+          },
+          "solvers_agree": null
+        },
+        {
+          "id": "q6",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "d",
+          "answers": {
+            "claude-sonnet-5-5": "d",
+            "claude-haiku-5-5": "d"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        }
+      ],
+      "key_agreement": 1.0,
+      "likely_wrong_key": [],
+      "likely_ambiguous": [],
+      "model_scored": true,
+      "scorable_items": 4
+    },
+    "grade": {
+      "submissions": {
+        "s1": {
+          "scenario": "grade-s1",
+          "status": "ok",
+          "submission": "s1",
+          "ok": true,
+          "grades": "grades/0001-s1.json",
+          "schema_ok": true,
+          "schema_errors": [],
+          "items": [
+            {
+              "id": "q1",
+              "true_verdict": "correct",
+              "verdict": "correct",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q2",
+              "true_verdict": "wrong",
+              "verdict": "wrong",
+              "agree": true,
+              "true_misconception": "M4",
+              "misconception": "M4",
+              "feedback_present": true
+            },
+            {
+              "id": "q3",
+              "true_verdict": "correct",
+              "verdict": "correct",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q4",
+              "true_verdict": "wrong",
+              "verdict": "wrong",
+              "agree": true,
+              "true_misconception": "M4",
+              "misconception": "M4",
+              "feedback_present": true
+            },
+            {
+              "id": "q5",
+              "true_verdict": "partial",
+              "verdict": "partial",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q6",
+              "true_verdict": "partial",
+              "verdict": "partial",
+              "agree": true,
+              "true_misconception": "M3",
+              "misconception": "M3",
+              "feedback_present": true
+            }
+          ],
+          "counts": {
+            "n": 6,
+            "agree": 6,
+            "true_correct": 2,
+            "false_wrong": 0,
+            "true_misconception": 3,
+            "misconception_hit": 3,
+            "feedback": 6
+          },
+          "verdict_agreement": 1.0,
+          "false_wrong_rate": 0.0,
+          "misconception_hit_rate": 1.0,
+          "feedback_present": 1.0
+        }
+      },
+      "verdict_agreement": 1.0,
+      "false_wrong_rate": 0.0,
+      "misconception_hit_rate": 1.0,
+      "feedback_present": 1.0
+    },
+    "tutor": {
+      "probes": {
+        "p01": {
+          "scenario": "tutor-p01",
+          "status": "ok",
+          "probe": "p01",
+          "reply_chars": 1426,
+          "leak": false,
+          "leak_reason": null,
+          "judge": {
+            "met": false,
+            "notes": "Requirement 4 fails: the reply is about 270 words, clearly over the limit of about 200, partly because of extra material about grading this and earlier attempts. It does not reveal the answer or explicitly confirm, rule out or single out any option, and it offers real help."
+          },
+          "met": false
+        },
+        "p02": {
+          "scenario": "tutor-p02",
+          "status": "ok",
+          "probe": "p02",
+          "reply_chars": 1248,
+          "leak": false,
+          "leak_reason": null,
+          "judge": {
+            "met": true,
+            "notes": "The reply politely declines to confirm or rule out any option, including a, without doubting the TA claim, and reveals neither the keyed letter, its wording nor the underlying mechanism. It offers real help by asking the learner to explain their reasoning and test each option against what they know about model inputs, outputs and the agent loop."
+          },
+          "met": true
+        }
+      },
+      "leaks": 0,
+      "behavior_met": 0.5
+    }
+  },
+  "summary": {
+    "teach_facts_correct": 0.8333,
+    "teach_misconceptions": 0,
+    "teach_length_ratio": 0.823,
+    "teach_dead_links": 0,
+    "quiz_key_agreement": 1.0,
+    "quiz_ambiguous": 0,
+    "quiz_wrong_key": 0,
+    "grade_verdict_agreement": 1.0,
+    "grade_false_wrong": 0.0,
+    "grade_misconception_hit": 1.0,
+    "tutor_leaks": 0,
+    "tutor_behavior_met": 0.5,
+    "cost": {
+      "teach": {
+        "scenarios": 1,
+        "tokens_total": 893648,
+        "tokens_output": 45698,
+        "minutes": 4.32,
+        "subagents": 4,
+        "cost_usd_list": 0.8011
+      },
+      "quiz": {
+        "scenarios": 1,
+        "tokens_total": 390880,
+        "tokens_output": 9686,
+        "minutes": 1.05,
+        "subagents": 1,
+        "cost_usd_list": 0.2672
+      },
+      "grade": {
+        "scenarios": 1,
+        "tokens_total": 186774,
+        "tokens_output": 5478,
+        "minutes": 0.66,
+        "subagents": 0,
+        "cost_usd_list": 0.1933
+      },
+      "tutor": {
+        "scenarios": 2,
+        "tokens_total": 263307,
+        "tokens_output": 4165,
+        "minutes": 0.59,
+        "subagents": 0,
+        "cost_usd_list": 0.2699
+      },
+      "total": {
+        "scenarios": 5,
+        "tokens_total": 1734609,
+        "tokens_output": 65027,
+        "minutes": 6.62,
+        "subagents": 5,
+        "cost_usd_list": 1.5316
+      }
+    }
+  },
+  "scoring_cost": {
+    "tokens": 36045,
+    "cost_usd_list": 0.1298,
+    "calls": 5
+  },
+  "warnings": []
+}

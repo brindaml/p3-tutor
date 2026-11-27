@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory</title>
+  <link rel="stylesheet" href="../assets/lesson.css">
+</head>
+<body>
+<main>
+  <h1>Context and memory</h1>
+  <p><a href="../lessons/0001-context-and-memory.html">Back to the lesson</a></p>
+  <table>
+    <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>Context window</td><td>All the text the model can reference in a call, including its output; limited in tokens</td></tr>
+      <tr><td>Stateless API</td><td>Your program sends the history with each call</td></tr>
+      <tr><td>Long-term memory</td><td>Information stored outside the context and loaded back later</td></tr>
+      <tr><td>Compaction</td><td>Summarize a long history and continue from the summary</td></tr>
+      <tr><td>Tool-result clearing</td><td>Remove old, bulky tool output</td></tr>
+      <tr><td>RAG</td><td>Search stored chunks, add the best ones to context, then answer</td></tr>
+      <tr><td>Keyword search</td><td>Matches words and exact strings, such as codes</td></tr>
+      <tr><td>Embedding search</td><td>Matches by meaning, even with different wording</td></tr>
+      <tr><td>Just-in-time retrieval</td><td>Hold references; load content with tools when needed</td></tr>
+    </tbody>
+  </table>
+  <h2>Design questions for each piece of information</h2>
+  <ol>
+    <li>Does this call need it in context?</li>
+    <li>Can it change? If so, read the official source fresh.</li>
+    <li>Needed next session? Then plan how to save, fetch and load it.</li>
+    <li>Who may read or write it, when does it expire, and how is it corrected?</li>
+  </ol>
+  <h2>Token count for a loop</h2>
+  <p>Each call's input = the previous call's input + what was added since (if nothing is removed). Total input = the sum over all calls. The window limit applies to one call, including its output.</p>
+  <p>Source: <a href="https://anthropic.com/engineering/effective-context-engineering-for-ai-agents">context engineering</a>, <a href="https://www.anthropic.com/engineering/contextual-retrieval">contextual retrieval</a>, <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">context windows</a>.</p>
+</main>
+</body>
+</html>

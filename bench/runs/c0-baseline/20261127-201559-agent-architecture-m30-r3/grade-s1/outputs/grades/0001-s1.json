@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right: an agent is a loop. The model picks an action, it gets run, the result comes back, and this repeats until the task is done or something stops it. A longer prompt or a bigger model changes what goes into or comes out of a call, but doesn't create that loop."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "You chose that the model opens the booking system and reads the calendar itself, but a model can only output text. Here it outputs a request such as check_calendar(\"laser cutter\", \"tomorrow\"), written in a structured form your code can read (option c). Your program runs the function and sends the entries back to the model, so when you design the assistant, your code is what actually touches the booking system."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right: a step limit ends a loop that is going nowhere and reports what happened, so a person can step in. All 40 steps already fit in the context (the text the model is given), so more room wouldn't fix this. For your assistant, it also caps how many model calls one stuck request can cost."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "The answer is 4. You're right that the model gets the question and that three tools are used, but the model doesn't run them inside one call: it requests one tool, the call ends, your program runs it, and then calls the model again with the result. That is call 1 for check_calendar, call 2 for search_manuals, call 3 for check_training_record and call 4 for the final answer; each call adds to your model costs."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The first half is right: the program sends the result back to the model. The question also asked why, and your answer doesn't say: the program calls the model again with the result in its input, so the model can use it to choose the next tool or write the final answer. When a question asks what and why, add a \"so that...\" to your answer."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "Your first sentence is right: the model is given each tool's name and description and picks the one that fits the need. The second is wrong: the model doesn't remember on its own which tool it picked in earlier sessions. Using the model doesn't retrain it, so it only has what it learned in training plus the text it is given now; if your assistant should use past sessions, your program has to save that information and put it into the model's input."
+    }
+  ],
+  "summary": "You got 2 correct, 2 partly correct and 2 wrong. You recognized the agent loop and why it needs a step limit. The main thing to fix is who does what (q2 and q4): the model only writes a tool request or an answer, while your program runs the tool and calls the model again. Separately, in q6, remember that the model doesn't carry memories between sessions on its own. Next step: for \"Is the laser cutter free Friday, and am I trained to use it?\", write out each step, label it \"model\" or \"program\", and count the model calls, assuming one tool request per call. This grade covers your first attempt (s1) only; your later attempt (s2) hasn't been graded."
+}

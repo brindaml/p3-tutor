@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who decides what happens next?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Each design below uses a language model in your makerspace software. Which one is an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Code searches the manuals, then has the model answer from the page found"},
+        {"id": "b", "text": "Code has the model draft a reply, check it, and then rewrite it"},
+        {"id": "c", "text": "Model reads each tool result, then picks another tool or gives its answer"},
+        {"id": "d", "text": "Code loops over twenty bookings, having the model write a reminder for each"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "For each damage report, your code has the model pull out the machine's name. The code then fetches that machine's manual page, has the model draft a repair note from it, and emails the note to staff. Is this a workflow or an agent? Give your reason in one sentence."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every equipment booking must follow the same order: check the student's training record, then check the calendar, then book. A booking must never skip the training check. Which design choice has the best reason behind it?",
+      "options": [
+        {"id": "a", "text": "A workflow, because its code can force the training check to come before booking"},
+        {"id": "b", "text": "An agent, because any task needing several tools needs the model to direct them"},
+        {"id": "c", "text": "An agent, because a firm rule in its prompt will guarantee the required order"},
+        {"id": "d", "text": "A workflow, because its code makes every answer from the model correct and reliable"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "You compare two designs for requests that always need one manual search and one calendar check. In the agent, each model call either requests exactly one tool or writes the final answer. It requests the search, then the calendar check, then answers. In the workflow, code runs both tools itself, then calls the model once to write the answer. There are no retries or other model calls. Over 200 such requests, how many fewer model calls does the workflow make?",
+      "unit": "model calls"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which of these makerspace tasks makes the strongest case for using an agent?",
+      "options": [
+        {"id": "a", "text": "Show the safety checklist from the manual for whichever machine a student selects"},
+        {"id": "b", "text": "Track down why a student's 3D print fails, letting each finding decide the next check"},
+        {"id": "c", "text": "Total last week's booked hours for each machine and then write a short summary"},
+        {"id": "d", "text": "Send each student a friendly reminder about their booked time on the day before"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In your design, the model labels each student message as \"manual question\" or \"booking\". Your code then runs a fixed series of steps written for that label. A teammate says, \"The model's output decides what runs next, so this is an agent.\" Do you agree? Explain in one or two sentences."
+    }
+  ]
+}

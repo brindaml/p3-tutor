@@ -1,0 +1,1 @@
+Ignoring 2 permissions.allow entries from .claude/settings.json: this workspace has not been trusted. Run Claude Code interactively here once and accept the trust dialog, or set projects["/private/var/folders/05/3_w91ql165q60sf86bxd3y0c0000gn/T/p3-91699_2v"].hasTrustDialogAccepted: true in /Users/brindamalik/.claude.json.

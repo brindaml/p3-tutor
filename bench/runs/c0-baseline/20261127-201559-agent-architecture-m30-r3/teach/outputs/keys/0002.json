@@ -1,0 +1,38 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "Nothing was saved or supplied, and a stateless API carries nothing between calls, so the Friday call does not have the fact. a, c and d assume memory happens automatically (M3).",
+      "distractors": {"a": "M3", "c": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 3200,
+      "tolerance": 0,
+      "rationale": "Call 1 input is 1,000 + 200 = 1,200. Call 2 input is 1,200 + 100 + 700 = 2,000. Total 3,200. The 300-token final answer is output. 2,000 counts only the last call; 2,000 or less per total can also show the belief that earlier input is not sent again."
+    },
+    {
+      "id": "q3",
+      "answer": "tool",
+      "accepted": ["call the tool", "call the tool again", "the tool", "use the tool"],
+      "rationale": "The printer's status can change, so Monday's note may be stale; the status tool gives the current value. Full credit needs 'tool' and that reason. 'tool' with no reason or a wrong reason is partial; 'note' is wrong."
+    },
+    {
+      "id": "q4",
+      "answer": "c",
+      "rationale": "Keyword search matches the literal string. Semantic search can miss exact matches or rank similar identifiers; training recall and chat history are not searches of the manual."
+    },
+    {
+      "id": "q5",
+      "answer": "Every call pays for all those input tokens, and the extra irrelevant text can make the model's answers less accurate.",
+      "accepted": [
+        "It costs more on every call.",
+        "Accuracy and recall can degrade as the context grows.",
+        "It leaves less room in the window for history, tool results and output.",
+        "Responses can be slower because there is much more input to process."
+      ],
+      "rationale": "Any one real downside, correctly stated, is full credit: higher input cost on each call, context rot or distraction, less remaining room, or more processing time. Saying there is no downside, or only that it will not fit (the stem says it fits), is wrong and shows M7."    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "In one task, the first model call's input is 1,000 tokens (system prompt, tool definitions and question). The model sends a 40-token tool request and the tool returns 460 tokens. On the second call it sends another 40-token request, and that tool returns 1,460 tokens. The third call gives the final answer. Each call's input includes everything from earlier calls plus all new requests and results. Ignoring caching and any other tokens, how many input tokens are sent in total across the three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your program uses a stateless model API. To save tokens, a teammate changes it so that after a tool runs, the next call sends only the system prompt, the tool definitions and the new tool result. What is the main problem?",
+      "options": [
+        {"id": "a", "text": "The model still recalls the question but loses the tool result"},
+        {"id": "b", "text": "The model cannot see the question or its own earlier request"},
+        {"id": "c", "text": "The model will rerun every earlier tool to rebuild its history"},
+        {"id": "d", "text": "The model keeps the question, but its window fills up faster"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student says they need the wheelchair-height workbench, and your program saves that fact to a file. On Friday the student starts a new session. What lets the assistant use the fact?",
+      "options": [
+        {"id": "a", "text": "The model recalls it, since it processed that fact on Monday"},
+        {"id": "b", "text": "Nothing more, because saved files join each new context by themselves"},
+        {"id": "c", "text": "The system puts the saved fact into the model's input Friday"},
+        {"id": "d", "text": "The model's training slowly absorbs the file during the following days"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A student writes, \"my cut edges come out brown and burnt.\" The helpful manual section only talks about \"charring and discoloration\" and shares no words with the message. Which kind of search is more likely to find it: keyword search or embedding search?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A long troubleshooting session is near the context limit. It holds many long manual pages that have already been used, plus the fault symptoms and the results of fixes already tried. The pages can be searched again. Which compaction plan is best?",
+      "options": [
+        {"id": "a", "text": "Keep the raw page text; drop symptoms and results of fixes"},
+        {"id": "b", "text": "Keep only the newest message; drop everything that came before it"},
+        {"id": "c", "text": "Keep every earlier token; add a request to please be brief"},
+        {"id": "d", "text": "Keep symptoms and fix results; drop the old raw page text"}
+      ]
+    }
+  ]
+}

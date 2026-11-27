@@ -1,0 +1,40 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "A fact must be saved outside the session and then supplied in the later call's input. Choosing a larger window does not carry a chat into a new session.",
+      "distractors": {"a": "M3", "c": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": 4850,
+      "tolerance": 0,
+      "rationale": "2,000 + (2,000 + 50 + 800) = 4,850. An answer of 2,850 counts only the second call. The 100-token final answer is output, not input."
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "Retrieval adds stored text to the model's input. It does not train the model, enlarge the window or by itself keep anything for later sessions.",
+      "distractors": {"a": "M8", "c": "M3"}
+    },
+    {
+      "id": "q4",
+      "answer": "The program includes the tool result in the input of the second call.",
+      "accepted": [
+        "The program adds the result to the history and sends it to the model in the second call.",
+        "The program puts the tool result into the second call's context."
+      ],
+      "rationale": "Full credit needs the result being supplied by the program as part of the second call's input. Saying the model remembers it on its own is wrong (M3)."
+    },
+    {
+      "id": "q5",
+      "answer": "Sending less costs fewer input tokens, and a long context full of irrelevant text can reduce the model's accuracy (context rot).",
+      "accepted": [
+        "Lower cost and better accuracy by avoiding context rot."
+      ],
+      "rationale": "Full credit needs two distinct valid reasons, such as lower cost, less risk of reduced accuracy or recall, faster responses, or more room for history and output. One reason is partial. Saying there is no downside because everything fits shows M7."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. What makes an agent is the loop: the model picks an action, it gets run, and the result comes back for the next choice. A longer prompt or a bigger model changes what the model has to work with, but doesn't by itself create that loop."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The model outputs only a request: the tool's name, check_calendar, plus the arguments (the values to run it with), here the laser cutter and tomorrow's date. The program around the model does the actual calendar check, so keep this answer in mind when you read the feedback on q4."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "The answer is b, a step limit that stops the loop and reports what happened. It's tempting to think an agent will get there with more time, but this one has repeated the same edit and got the same failure, and nothing shows that more steps will change that; they just cost more model calls. Like retrying code that keeps failing the same way, the loop needs a stopping condition so a person can step in, so give your assistant's loop one."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "4 is right, and so is your order: three tool requests, then a fourth call that writes the answer. The reason is wrong, though: the model never runs a tool itself. In each of the first three calls it only writes a request, such as one for check_calendar; the program runs the tool and calls the model again with the result, as you described in q5."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct, and you gave both parts: the result goes back to the model as input, and the model uses it to decide what to do next, which may be writing the final answer. Your group chat picture works as long as you remember that the program is what posts the tool's result and gives the model its next turn."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name does help, but it's only part of what the model gets. The program gives it a description of each tool: its name, what it does, and its parameters (the inputs it takes), and the model uses these to choose. For example, a name like check_calendar doesn't say whether the tool covers machine bookings or staff hours, so your description needs to say so."
+    }
+  ],
+  "summary": "You have the core loop down: what makes an agent, what the model outputs when it wants a tool, how the result goes back to it, and that this run takes 4 model calls. The main thing to fix is who runs the tools: the model only asks, and the program runs them. Your q2 answer says the model sends a request, but your q4 reason says it runs the tool itself. Also work on stopping conditions (q3) and on what a tool description contains (q6). Next step: trace the laser cutter request from q4 again, label every step \"model\" or \"program\", and mark where a step limit would stop the loop."
+}

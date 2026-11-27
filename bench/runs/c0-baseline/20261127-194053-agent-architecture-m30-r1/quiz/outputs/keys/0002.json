@@ -1,0 +1,44 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "Only in b does the model decide what happens next and when to finish. In a and d code fixes the sequence of calls. In c the model makes one choice of label, but the paths and their steps are set in code (routing)."
+    },
+    {
+      "id": "q2",
+      "answer": "A workflow, because your code fixes the steps that can run; the model only picks which predefined path is taken.",
+      "accepted": [
+        "Workflow, because the code controls the steps and the model only chooses a label.",
+        "It is a workflow: the paths are predefined in code, even though the model picks one."
+      ],
+      "rationale": "This is routing. Full credit needs 'workflow' and the reason that the paths or steps are set in code. 'Workflow' with no reason or a wrong reason is partial. 'Agent', because the model makes a decision or is called more than once, is wrong."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "When the steps and their number cannot be predicted because each depends on earlier findings, a path cannot easily be written in advance, which is where an agent helps. In a, b and d the steps are known beforehand, so code can fix them."
+    },
+    {
+      "id": "q4",
+      "answer": 12,
+      "tolerance": 0.005,
+      "rationale": "The agent makes 3 more calls per request: 3 x 0.4 = 1.2 cents, and over 1,000 requests that is 1,200 cents, or 12 dollars. An answer of 1200 is in cents; 20 is the agent's total cost and 8 is the workflow's."
+    },
+    {
+      "id": "q5",
+      "answer": "Who decides the next step (who owns the control flow)? It is an agent if the model decides during the run which steps or tools come next, and not if code fixes them in advance.",
+      "accepted": [
+        "Who controls the flow? It is an agent only if the model chooses the next step as it goes.",
+        "Does the code or the model decide what happens next? It is an agent if the model decides."
+      ],
+      "rationale": "Full credit needs both the question of who decides the next step and that model-directed steps make it an agent. Only one of the two is partial. Relying on the number of model calls or tools is wrong."
+    },
+    {
+      "id": "q6",
+      "answer": "d",
+      "rationale": "The order of steps is known, so code can own it, with the model used to read the varied wording; this is simpler and its number of steps and cost are predictable. Varied wording (a) or several tools (b) does not make the order unknown. Fixing the order does not stop the model misreading a date (c)."
+    }
+  ]
+}

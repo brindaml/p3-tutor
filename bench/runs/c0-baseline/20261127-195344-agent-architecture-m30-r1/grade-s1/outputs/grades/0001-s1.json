@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The loop is what makes it an agent: the model picks an action, the action is run, and the result comes back for the next step. A longer prompt or a bigger model changes what the model has to work with, but doesn't by itself create that loop."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "You chose that the model opens the booking system and reads the entries itself, but it only produces output: here, a request naming check_calendar with the laser cutter and tomorrow's date (option c). The program around the model runs the tool and sends the entries back. For example, the model writes something like \"call check_calendar(laser cutter, tomorrow)\", and your Python code is what actually makes that call."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. A step limit makes the program end the loop even when the model keeps repeating itself, and the report lets a person take over. All 40 steps already fit in the context (what the model is given to read), so more room wouldn't address the problem."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "The answer is 4. The model doesn't run the tools itself: each time it asks for one, that model call ends, the program runs the tool, and the program calls the model again with the result. That gives call 1 → asks for check_calendar, call 2 → asks for search_manuals, call 3 → asks for check_training_record, call 4 → writes the final answer."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "You got what happens: the program sends the result back to the model. The question also asked why, and your answer doesn't say. A full answer adds that the program puts the result in the model's next input and calls it again, so the model can use it to choose its next step or write the final answer."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "Your first sentence is right: the model gets a list of tools with names and descriptions, and picks the one that fits. The added claim is wrong: the model doesn't remember on its own which tool it picked in earlier sessions. It has what it learned in training plus the text it is given now, so an earlier choice can only inform this one if a program saves it and puts it back into the model's input."
+    }
+  ],
+  "summary": "You can pick out the loop that makes a system an agent, you chose a step limit to stop a stuck one, and you know the model chooses tools from their descriptions. The main thing to fix is who does what (q2 and q4): the model only writes a tool request or an answer, while the program runs the tool and calls the model again with the result. Separately, the model doesn't remember earlier sessions on its own (q6), and when a question asks why, include the reason (q5). Next step: sketch the \"laser cutter at 3 pm\" request from q4 in two columns, Model and Program, put every action in one of them, and count the model calls."
+}

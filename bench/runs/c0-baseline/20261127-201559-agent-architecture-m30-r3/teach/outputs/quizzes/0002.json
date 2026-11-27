@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Tuesday a student tells your assistant that they are colorblind. Your program calls a stateless model API, saves no data after a chat ends, and sends nothing from earlier chats. The student opens a new chat on Friday. What is true?",
+      "options": [
+        {"id": "a", "text": "The model recalls it, having heard it on Tuesday"},
+        {"id": "b", "text": "The model lacks it, since nothing supplies that fact"},
+        {"id": "c", "text": "The model learned it, since chats update its training"},
+        {"id": "d", "text": "The model finds it, by searching its earlier chats"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent uses a stateless model API. Its system prompt and tool definitions total 1,000 tokens, and the user's question is 200 tokens. In the first call the model outputs a 100-token tool request. The tool returns 700 tokens. In the second call the model writes a 300-token final answer. The program removes and caches nothing, and there is no other overhead. How many input tokens do the two calls use in total?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O3",
+      "stem": "On Monday a status tool reported that 3D printer 2 was out of order, and your assistant could save that as a long-term note. On Thursday a student asks whether printer 2 works. The status tool is still available. Should the assistant answer from Monday's note or call the tool again? Answer with 'note' or 'tool', then give your reason in one sentence."
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student needs the manual passage about replacement part number QX-7719-B. The manual prints that exact string, and similar part numbers refer to different parts. Which search method is the most dependable choice for matching this exact string?",
+      "options": [
+        {"id": "a", "text": "Semantic search that ranks passages by similar meaning"},
+        {"id": "b", "text": "Model recall that relies on patterns from training"},
+        {"id": "c", "text": "Keyword search that matches the exact written string"},
+        {"id": "d", "text": "History search that checks only this chat's messages"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A teammate says: 'Our new model's context window is big enough for every manual, so we should send all of them on every call. If it fits, there is no downside.' Assume no prompt caching. In one or two sentences, give a downside of this plan."
+    }
+  ]
+}

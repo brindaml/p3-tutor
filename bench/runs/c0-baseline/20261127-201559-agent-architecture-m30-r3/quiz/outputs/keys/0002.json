@@ -1,0 +1,45 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "In c the model decides, after each result, what happens next and when to finish, so it owns the control flow. In a, b and d the code fixes the steps. Several model calls (b), a loop written in code (d) or a tool-like search step (a) do not by themselves make an agent."
+    },
+    {
+      "id": "q2",
+      "answer": "A workflow, because the code fixes which steps run and in what order.",
+      "accepted": [
+        "Workflow, because the code controls the flow.",
+        "It is a workflow: the code decides what happens next, and the model only does its assigned steps.",
+        "Workflow, because the steps are predefined in code and the model does not choose them."
+      ],
+      "rationale": "Full credit needs both 'workflow' and the reason that the code (not the model) decides the steps and their order; saying the path is predefined in code counts. 'Workflow' with no reason, or with only 'the steps are simple', is partial. Calling it an agent because it uses a model more than once or touches a manual and email is wrong."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "The steps and order are known in advance, and code that runs them can require a passing training check before it ever books. Using several tools does not require an agent (b). A prompt rule guides the model but cannot guarantee what it does (c). Code fixes the order of steps, not the correctness of everything the model writes (d)."
+    },
+    {
+      "id": "q4",
+      "answer": 400,
+      "tolerance": 0,
+      "rationale": "The agent makes 3 model calls per request (request the search, request the calendar check, answer) and the workflow makes 1, so it saves 2 x 200 = 400 calls. An answer of 600 is the agent's total, and 200 is either the workflow's total or a saving of only one call per request. An answer of 0, reasoning that the agent's model runs both tools inside one call, shows M4."
+    },
+    {
+      "id": "q5",
+      "answer": "b",
+      "rationale": "In b the next check depends on what the last one found, so the steps cannot be written out in advance, which is where letting the model direct the process helps. The tasks in a, c and d follow steps known beforehand, so a fixed workflow or plain code is more predictable and avoids the extra cost of an agent."
+    },
+    {
+      "id": "q6",
+      "answer": "No, it is a workflow: the code defines the possible paths and the steps in each, and the model only picks which predefined path to take.",
+      "accepted": [
+        "No. It is still a workflow because the code controls the flow; the model only chooses between branches the code already defines.",
+        "Disagree: this is a routing workflow, since the code fixes what each label does and the model only supplies the label."
+      ],
+      "rationale": "Full credit needs disagreement (it is a workflow) and the reason that the code defines the branches and what happens in them, with the model's label only selecting one; naming it 'routing' is not required. Disagreeing without that reason is partial. Agreeing that any influence of model output on the path makes it an agent is wrong."
+    }
+  ]
+}

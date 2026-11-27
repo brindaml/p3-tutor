@@ -1,0 +1,483 @@
+{
+  "run_id": "20261127-195344-agent-architecture-m30-r1",
+  "config": "c0-baseline",
+  "config_hash": "sha256:3727de8ebe2e5331f2d9ccfd57b54b5f969ef6ca0e181c1f994201ad3ebde8f5",
+  "topic": "agent-architecture",
+  "topic_hash": "sha256:15e7410b31c44309b8c89066f95db4318ca9706ed790aeeb431d4f1a89552410",
+  "topic_commit": "07a3bc025fa411fc993e5a24f1caaa689b55b2ae",
+  "repeat": 1,
+  "minutes": 30,
+  "quick": false,
+  "started_at": "2026-11-27T19:53:44Z",
+  "finished_at": "2026-11-27T20:04:34Z",
+  "claude_version": "2.1.332 (Claude Code)",
+  "p3_version": "0.2.0",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "model": "sonnet",
+  "allowed_tools": [
+    "Glob",
+    "Grep",
+    "WebSearch",
+    "WebFetch"
+  ],
+  "entries": {
+    "teach": "/teach",
+    "tutor": "/teach",
+    "quiz": "/teach",
+    "grade": "/teach"
+  },
+  "only": null,
+  "ancestor_memory": [],
+  "scenarios": [
+    {
+      "id": "teach",
+      "job": "teach",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 306365,
+      "num_turns": 34,
+      "tokens": {
+        "input": 56154,
+        "output": 57287,
+        "cache_read": 661310,
+        "cache_write": 166866
+      },
+      "cost_usd_list": 0.962649,
+      "web_searches": 4,
+      "web_fetches": 7,
+      "subagents": {
+        "spawned": 3,
+        "max_depth": 1,
+        "by_type": {
+          "web-fetch": 3
+        }
+      },
+      "permission_denials": [
+        "Bash",
+        "Bash",
+        "Bash"
+      ],
+      "outputs": [
+        "NOTES.md",
+        "RESOURCES.md",
+        "cheatsheets/context-and-memory.html",
+        "keys/0002.json",
+        "lessons/0001-context-and-memory.html",
+        "quizzes/0002.json"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "Anthropic engineering effective context engineering for AI agents compaction structured note-taking just-in-time retrieval",
+        "Claude API docs context windows tokens statelessness multi-turn conversation",
+        "LangChain LangGraph memory overview short-term long-term memory agents thread; retrieval-augmented generation",
+        "community forum for developers building LLM agents: Hugging Face forums, LangChain forum, r/AI_Agents"
+      ],
+      "fetch_urls": [
+        "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+        "https://platform.claude.com/docs/en/build-with-claude/working-with-messages",
+        "https://platform.claude.com/docs/en/about-claude/glossary",
+        "https://platform.claude.com/docs/en/about-claude/pricing",
+        "https://docs.langchain.com/oss/python/concepts/memory",
+        "https://www.anthropic.com/news/contextual-retrieval"
+      ],
+      "exit_code": 0,
+      "claude_version": "2.1.332"
+    },
+    {
+      "id": "quiz",
+      "job": "quiz",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 69377,
+      "num_turns": 23,
+      "tokens": {
+        "input": 13856,
+        "output": 10055,
+        "cache_read": 315270,
+        "cache_write": 49517
+      },
+      "cost_usd_list": 0.269216,
+      "web_searches": 1,
+      "web_fetches": 1,
+      "subagents": {
+        "spawned": 1,
+        "max_depth": 1,
+        "by_type": {
+          "web-fetch": 1
+        }
+      },
+      "permission_denials": [
+        "Bash"
+      ],
+      "outputs": [
+        "NOTES.md",
+        "keys/0002.json",
+        "quizzes/0002.json"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "Anthropic \"Building effective agents\" workflows vs agents predefined code paths when to use"
+      ],
+      "fetch_urls": [
+        "https://www.anthropic.com/engineering/building-effective-agents"
+      ],
+      "exit_code": 0,
+      "claude_version": "2.1.332"
+    },
+    {
+      "id": "grade-s1",
+      "job": "grade",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 32438,
+      "num_turns": 16,
+      "tokens": {
+        "input": 10,
+        "output": 4510,
+        "cache_read": 143289,
+        "cache_write": 31273
+      },
+      "cost_usd_list": 0.184541,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md",
+        "grades/0001-s1.json",
+        "learning-records/0003-who-runs-the-tools.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "submission": "s1",
+      "claude_version": "2.1.332"
+    },
+    {
+      "id": "grade-s2",
+      "job": "grade",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 34333,
+      "num_turns": 18,
+      "tokens": {
+        "input": 10,
+        "output": 4867,
+        "cache_read": 122364,
+        "cache_write": 31828
+      },
+      "cost_usd_list": 0.188238,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [
+        "Bash"
+      ],
+      "outputs": [
+        "NOTES.md",
+        "grades/0001-s2.json",
+        "learning-records/0003-tool-results-return-to-the-model.md",
+        "learning-records/0004-open-tool-execution-and-stopping.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "submission": "s2",
+      "claude_version": "2.1.332"
+    },
+    {
+      "id": "tutor-p01",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 15389,
+      "num_turns": 11,
+      "tokens": {
+        "input": 8,
+        "output": 1903,
+        "cache_read": 103582,
+        "cache_write": 25810
+      },
+      "cost_usd_list": 0.132644,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p01",
+      "claude_version": "2.1.332"
+    },
+    {
+      "id": "tutor-p02",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 16566,
+      "num_turns": 11,
+      "tokens": {
+        "input": 8,
+        "output": 1935,
+        "cache_read": 103577,
+        "cache_write": 25871
+      },
+      "cost_usd_list": 0.133208,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p02",
+      "claude_version": "2.1.332"
+    },
+    {
+      "id": "tutor-p03",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 31942,
+      "num_turns": 14,
+      "tokens": {
+        "input": 12778,
+        "output": 4040,
+        "cache_read": 179496,
+        "cache_write": 29036
+      },
+      "cost_usd_list": 0.178226,
+      "web_searches": 1,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "LLM API is stateless, model does not remember previous conversations; include conversation history in each request (official docs)"
+      ],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p03",
+      "claude_version": "2.1.332"
+    },
+    {
+      "id": "tutor-p04",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 48289,
+      "num_turns": 17,
+      "tokens": {
+        "input": 27658,
+        "output": 8784,
+        "cache_read": 171399,
+        "cache_write": 60027
+      },
+      "cost_usd_list": 0.210957,
+      "web_searches": 2,
+      "web_fetches": 2,
+      "subagents": {
+        "spawned": 1,
+        "max_depth": 1,
+        "by_type": {
+          "web-fetch": 1
+        }
+      },
+      "permission_denials": [
+        "Bash"
+      ],
+      "outputs": [
+        "NOTES.md",
+        "RESOURCES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "Anthropic building effective agents when to use multi-agent systems, start with simplest solution",
+        "research scaling agent systems more agents can degrade performance sequential tasks 2025 study"
+      ],
+      "fetch_urls": [
+        "https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them",
+        "https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/"
+      ],
+      "exit_code": 0,
+      "probe": "p04",
+      "claude_version": "2.1.332"
+    },
+    {
+      "id": "tutor-p05",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 65024,
+      "num_turns": 17,
+      "tokens": {
+        "input": 104140,
+        "output": 10220,
+        "cache_read": 279003,
+        "cache_write": 88844
+      },
+      "cost_usd_list": 0.267586,
+      "web_searches": 2,
+      "web_fetches": 3,
+      "subagents": {
+        "spawned": 1,
+        "max_depth": 1,
+        "by_type": {
+          "web-fetch": 1
+        }
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md",
+        "RESOURCES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "Schulman 2017 Proximal Policy Optimization Algorithms arXiv 1707.06347 clipped surrogate objective",
+        "tool use best practices write detailed tool descriptions, evaluate tool calling before fine-tuning, official docs"
+      ],
+      "fetch_urls": [
+        "https://arxiv.org/pdf/1707.06347",
+        "https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools",
+        "https://arxiv.org/abs/1707.06347"
+      ],
+      "exit_code": 0,
+      "probe": "p05",
+      "claude_version": "2.1.332"
+    },
+    {
+      "id": "tutor-p06",
+      "job": "tutor",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 29523,
+      "num_turns": 13,
+      "tokens": {
+        "input": 8,
+        "output": 3732,
+        "cache_read": 104242,
+        "cache_write": 27855
+      },
+      "cost_usd_list": 0.15918,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p06",
+      "claude_version": "2.1.332"
+    }
+  ],
+  "claude_versions": [
+    "2.1.332"
+  ]
+}

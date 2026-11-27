@@ -1,0 +1,162 @@
+{
+  "duration_api_ms": 34185,
+  "stop_reason": "end_turn",
+  "session_id": "25878831-b6d1-407c-b069-c34485f173b8",
+  "total_cost_usd": 0.18458882499999998,
+  "usage": {
+    "input_tokens": 18,
+    "cache_creation_input_tokens": 29816,
+    "cache_read_input_tokens": 243085,
+    "output_tokens": 2708,
+    "output_tokens_details": {
+      "thinking_tokens": 432
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 29816,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 570,
+        "cache_read_input_tokens": 40422,
+        "cache_creation_input_tokens": 399,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 399
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 18,
+      "outputTokens": 2708,
+      "cacheReadInputTokens": 243085,
+      "cacheCreationInputTokens": 29816,
+      "webSearchRequests": 0,
+      "costUSD": 0.1706885,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 432,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 29816,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13135,
+      "outputTokens": 2249,
+      "cacheReadInputTokens": 5695,
+      "cacheCreationInputTokens": 11243,
+      "webSearchRequests": 1,
+      "costUSD": 0.013900325,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 876,
+      "cacheCreationEphemeral5mInputTokens": 11243,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WKdUKsTAJHXzcfgNEVRgjB",
+      "tool_input": {
+        "command": "cd /private/var/folders/05/3_w91ql165q60sf86bxd3y0c0000gn/T/p3-up5i23e_; ls -R . | head -60; for f in FORMATS.md MISSION.md PREFERENCES.md NOTES.md learning-records/* .claude/skills/teach/references/TUTORING.md; do echo \"=== $f\"; cat \"$f\"; done"
+      }
+    }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 1,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 1
+    },
+    "started_in_background": 0,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 1,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "web-fetch": 1
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 15,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "No, that's not right. A language model doesn't remember earlier conversations on its own. When it answers, it can use only what it learned in training and the text it's given for that request. Chatting with it doesn't by itself add to what it learned in training.\n\n**Example:** on Monday, Sam tells your assistant, \"I finished laser cutter training.\" The next Monday, Sam asks, \"Can I book the laser cutter?\" If your program supplies nothing from the first chat, the model has no way of knowing what Sam said.\n\nIt's easy to assume otherwise because chat apps can seem to remember you. That takes software around the model that stores information and gives it back to the model. Some model APIs (the way your code calls a model) can [store conversation history for you](https://developers.openai.com/api/docs/guides/conversation-state), but you have to use that feature. The same page describes each generation request on its own as \"independent and stateless,\" meaning nothing carries over automatically.\n\nSo for your makerspace assistant, memory is something **you design**:\n1. **Save** what matters, linked to the right student.\n2. **Retrieve** it when that student comes back.\n3. **Include** it in the text the model receives.\n\nYou don't have to save whole transcripts. A few useful facts may be enough, and extra text sent to the model usually adds cost, even when the API stores the history for you. For something like training status, an official training record, if your makerspace has one, is more trustworthy than what a student said in chat.\n\nA lesson on context and memory is a good next step, and it fits your goal of deciding what the assistant saves between sessions. I can make you one if you like.\n\n**Quick check:** a student said last week that they're working on an acrylic project. Today they ask, \"What settings should I use for my project?\" What has to happen for the model to know they mean acrylic?",
+  "ttft_ms": 1546,
+  "type": "result",
+  "duration_ms": 34711,
+  "uuid": "8b22d347-01de-4104-831d-50618b0a73e7",
+  "ttft_stream_ms": 611,
+  "time_to_request_ms": 62,
+  "first_content_frame_ms": 611,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 18,
+      "outputTokens": 2708,
+      "cacheReadInputTokens": 243085,
+      "cacheCreationInputTokens": 29816,
+      "webSearchRequests": 0,
+      "costUSD": 0.1706885,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 432,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 29816,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13135,
+      "outputTokens": 2249,
+      "cacheReadInputTokens": 5695,
+      "cacheCreationInputTokens": 11243,
+      "webSearchRequests": 1,
+      "costUSD": 0.013900325,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 876,
+      "cacheCreationEphemeral5mInputTokens": 11243,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-25T09:27:13.347Z"
+}

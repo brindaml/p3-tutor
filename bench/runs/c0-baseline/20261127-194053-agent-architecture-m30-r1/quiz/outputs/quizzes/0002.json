@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Each of these designs uses a language model. Which one is an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Code calls the model to find a date, then checks the calendar, then calls it to reply"},
+        {"id": "b", "text": "The model gets a goal and tools, then picks each next call until it decides to answer"},
+        {"id": "c", "text": "The model labels each question, then code runs the fixed set of steps for that label"},
+        {"id": "d", "text": "Code calls the model to draft a reply, then calls it again to check and fix that draft"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In your makerspace assistant, the model first labels each message as \"manual question\" or \"booking\". Your code then runs a fixed series of steps for that label, and some of those steps call the model again. Is this a workflow or an agent? Give your reason in one sentence."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which of these makerspace jobs gives the strongest reason to use an agent instead of a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Each booking needs a training check, a calendar check and a write, always in that order"},
+        {"id": "b", "text": "Each weekly report needs the same four calendar queries, then a summary of their results"},
+        {"id": "c", "text": "Each fault report needs checks that depend on what earlier checks turn up, in no set order"},
+        {"id": "d", "text": "Each manual question needs one search for the right pages, then an answer based on them"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "You compare two designs for one booking request. The workflow always makes exactly 2 model calls. On a typical run, the agent makes 5 model calls. Assume every model call costs 0.4 cents and there are no other costs. Over 1,000 requests, how many dollars does the workflow save compared with the agent?",
+      "unit": "dollars"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A teammate says: \"Our booking feature calls the model three times and uses two tools, so it is an agent.\" In one or two sentences, what question must you answer about the design to know whether they are right, and which answer would make it an agent?"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking must follow the same steps: read the request, check training, check the calendar, then book. Students word their requests in many different ways. An agent and a fixed workflow both pass your first tests. Which is the better choice, and for what reason?",
+      "options": [
+        {"id": "a", "text": "Agent, because requests worded in many ways mean the order of steps cannot be set in code"},
+        {"id": "b", "text": "Agent, because any task that uses two or more tools needs the model to choose their order"},
+        {"id": "c", "text": "Workflow, because code that fixes the order of steps also stops the model misreading dates"},
+        {"id": "d", "text": "Workflow, because the steps are known, so code can fix their order at a predictable cost"}
+      ]
+    }
+  ]
+}

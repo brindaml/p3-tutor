@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday, in one session, a student tells the assistant you built that they are left-handed. You want it to use this fact in a new session on Friday. The model is not retrained. Which design achieves that?",
+      "options": [
+        {"id": "a", "text": "Tell the model once, so it keeps the fact itself"},
+        {"id": "b", "text": "Save the fact, then add it to Friday's model input"},
+        {"id": "c", "text": "Pick a much larger window, so Monday's chat stays inside"},
+        {"id": "d", "text": "Save the fact, but leave it out of Friday's input"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent answers a question using two model calls. The first call's input is 2,000 tokens. The model outputs a 50-token tool request, and the tool returns 800 tokens. The second call's input is everything in the first call's input, plus the request and the result. The second call outputs a 100-token final answer. Ignoring any other tokens, what is the total number of input tokens across both calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your program retrieves a passage from the band saw manual, and the model answers using it. Retrieval here only searches the manual and returns text. What did it change for the model?",
+      "options": [
+        {"id": "a", "text": "Its trained knowledge now includes that passage for good"},
+        {"id": "b", "text": "Its context window grew larger to hold that passage"},
+        {"id": "c", "text": "Its memory now keeps that passage for later sessions"},
+        {"id": "d", "text": "Its input for this call now includes that passage"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your program uses a model API that stores nothing between calls. Within one session, the second model call needs a tool result obtained after the first call. In one sentence, how does that result become available to the second call?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A model's context window is large enough to hold all your team's machine manuals at once. A teammate wants to send all of them with every question. Assume you pay per input token, with no caching. In one or two sentences, give two different reasons to try sending only the relevant parts."
+    }
+  ]
+}

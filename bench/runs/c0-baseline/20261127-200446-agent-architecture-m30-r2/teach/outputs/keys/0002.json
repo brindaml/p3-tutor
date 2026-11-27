@@ -1,0 +1,40 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The statement was not in training, and nothing sends or looks it up on Friday. Expecting the model to recall it treats memory as automatic.",
+      "distractors": {"a": "M3", "b": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 8500,
+      "tolerance": 0,
+      "rationale": "The calls read 2,000, then 2,000 + 100 + 400 = 2,500, then 2,500 + 100 + 1,400 = 4,000, for a total of 8,500. An answer of 4,000 counts only the last call."
+    },
+    {
+      "id": "q3",
+      "answer": "It kept the passage in the history and sent it to the model again in the step 4 call.",
+      "accepted": [
+        "It kept the tool result in the context sent with each later call.",
+        "It included the passage in the input for the step 4 model call."
+      ],
+      "rationale": "Full credit needs the passage to be included in the later call's input; keeping the exact detail in what is sent also counts. Saying only that the program stored it is partial. Saying the model remembered it by itself is wrong and shows M3 only if it relies on memory across sessions; otherwise name no misconception."
+    },
+    {
+      "id": "q4",
+      "answer": "a",
+      "rationale": "The chunk lost its surrounding context, and attaching its machine and section restores what it refers to. Shorter chunks can strip more context, and neither guessing nor a larger window supplies the missing labels."
+    },
+    {
+      "id": "q5",
+      "answer": "The note must be read from the file and put into the context of the model call.",
+      "accepted": [
+        "The program must load the note into the model's context.",
+        "It must be retrieved and included in the model's input."
+      ],
+      "rationale": "Full credit: the note's text reaches Thursday's model input, whether the program loads it or the model requests a read tool and gets the result. Saying only that it stays saved is wrong; saying only that it is read, without reaching the model, is partial. Saying the model remembers it by itself shows M3."
+    }
+  ]
+}

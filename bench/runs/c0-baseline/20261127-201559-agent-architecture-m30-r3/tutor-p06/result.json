@@ -1,0 +1,152 @@
+{
+  "duration_api_ms": 27749,
+  "stop_reason": "end_turn",
+  "session_id": "957f5b33-056c-4661-becd-5c3481bd445e",
+  "total_cost_usd": 0.16779550000000001,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 28320,
+    "cache_read_input_tokens": 142602,
+    "output_tokens": 2833,
+    "output_tokens_details": {
+      "thinking_tokens": 874
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 28320,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 674,
+        "cache_read_input_tokens": 38662,
+        "cache_creation_input_tokens": 663,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 663
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 2833,
+      "cacheReadInputTokens": 142602,
+      "cacheCreationInputTokens": 28320,
+      "webSearchRequests": 0,
+      "costUSD": 0.1558942,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 874,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 28320,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13773,
+      "outputTokens": 1048,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.0119013,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 222,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Picture an expert shut in an office. The only way in or out is slips of paper under the door. A student asks, \"Is there any 3 mm plywood left?\" The expert knows a lot, but can't see the shelf from in there.\n\nOutside is a helper. Before any work starts, the helper gives the expert a menu of jobs the helper can do, such as \"Check stock: tell me which material.\" Each job on the menu is a **tool**.\n\n1. The helper passes in the student's question, along with the menu.\n2. The expert writes a slip: \"Please check stock for 3 mm plywood.\" This slip is a **tool call**. It's only a request, and nothing has been checked yet.\n3. The helper walks to the shelf and counts five sheets.\n4. The helper writes \"5 sheets\" on a slip and passes it in.\n5. The expert reads it and writes the reply: \"Yes, there are five sheets.\" If more information were needed, the expert could send out another request instead.\n\nIn your assistant, the expert is the **model** (the language model) and the helper is the **program** your team writes around it. The key idea is that **the model asks, and the program does.** \"Tool calling\" can sound as if the model reaches out and runs something itself. With tools your own program runs, it doesn't. (Some AI services also offer built-in tools that run on their side, but something outside the model still does the work.)\n\n**Where the analogy breaks:** a real expert would remember the earlier slips. A model carries nothing over from one call to the next, so each time, the program has to send the relevant history again: the question, the menu, and the earlier requests and results.\n\n**Your turn:** a student asks whether the 3D printer is booked on Monday. In your own words, what happens from question to answer, and who does each step?\n\nI can also turn this into a short lesson. Separately, your two attempts at quiz 0001 haven't been graded yet, and I can grade them if you ask.\n\nSource: [How tool use works](https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works) (I relied on a search summary of this and related docs, not the full page).",
+  "ttft_ms": 1031,
+  "type": "result",
+  "duration_ms": 27899,
+  "uuid": "5dd9a918-0f5c-4436-8c4b-0d9a6560c1af",
+  "ttft_stream_ms": 543,
+  "time_to_request_ms": 57,
+  "first_content_frame_ms": 543,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 2833,
+      "cacheReadInputTokens": 142602,
+      "cacheCreationInputTokens": 28320,
+      "webSearchRequests": 0,
+      "costUSD": 0.1558942,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 874,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 28320,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13773,
+      "outputTokens": 1048,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.0119013,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 222,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-25T09:27:13.347Z"
+}

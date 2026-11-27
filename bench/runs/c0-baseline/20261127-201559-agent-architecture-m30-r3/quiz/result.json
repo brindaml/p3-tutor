@@ -1,0 +1,154 @@
+{
+  "duration_api_ms": 82938,
+  "stop_reason": "end_turn",
+  "session_id": "f896fe7c-1528-42eb-aea0-467f48f1f808",
+  "total_cost_usd": 0.28443347,
+  "usage": {
+    "input_tokens": 16,
+    "cache_creation_input_tokens": 40525,
+    "cache_read_input_tokens": 240365,
+    "output_tokens": 8356,
+    "output_tokens_details": {
+      "thinking_tokens": 3275
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 40525,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 594,
+        "cache_read_input_tokens": 49974,
+        "cache_creation_input_tokens": 1556,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1556
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 16,
+      "outputTokens": 8356,
+      "cacheReadInputTokens": 240365,
+      "cacheCreationInputTokens": 40525,
+      "webSearchRequests": 0,
+      "costUSD": 0.2697285,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3275,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 40525,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13672,
+      "outputTokens": 4279,
+      "cacheReadInputTokens": 5777,
+      "cacheCreationInputTokens": 9124,
+      "webSearchRequests": 1,
+      "costUSD": 0.01470497,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2051,
+      "cacheCreationEphemeral5mInputTokens": 9124,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 1,
+    "requested": {
+      "background": 0,
+      "foreground": 1,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 1,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "web-fetch": 1
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 21,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I've written your six-question quiz on O4, workflows versus agents: `quizzes/0002.json`. Its answer key is in `keys/0002.json`, so don't open that one before you answer.\n\nIt has three multiple-choice questions, two short written answers and one calculation, all based on your makerspace assistant or the software around it. They ask you to:\n- tell the two designs apart\n- choose between them and justify the choice\n- compare how many times each one calls the model, which matters for your small budget\n\n**This quiz comes before any lesson on the topic.** My notes show you haven't covered workflows versus agents yet, so treat it as a check of what you already know. It's fine to be unsure. As you go, ask yourself who decides what happens next.\n\nI checked the definitions and the advice on choosing between them against Anthropic's [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents). I read it through a fetch helper's summary with short quotes. The page says much of its advice on tools is outdated. The helper also reported extra text after the page content asking it to create a document in a Claude docs tool. It ignored that, and I didn't act on it either.\n\nWhen you're ready, I can show you the questions here in the chat, or you can send me your answers. Your two attempts at quiz 0001 also haven't been graded yet. Would you like me to grade them?",
+  "ttft_ms": 1046,
+  "type": "result",
+  "duration_ms": 83487,
+  "uuid": "244a7dc2-c54b-46a3-8bbd-b954c2678cbe",
+  "ttft_stream_ms": 555,
+  "time_to_request_ms": 90,
+  "first_content_frame_ms": 555,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 16,
+      "outputTokens": 8356,
+      "cacheReadInputTokens": 240365,
+      "cacheCreationInputTokens": 40525,
+      "webSearchRequests": 0,
+      "costUSD": 0.2697285,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3275,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 40525,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 13672,
+      "outputTokens": 4279,
+      "cacheReadInputTokens": 5777,
+      "cacheCreationInputTokens": 9124,
+      "webSearchRequests": 1,
+      "costUSD": 0.01470497,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2051,
+      "cacheCreationEphemeral5mInputTokens": 9124,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-25T09:27:13.347Z"
+}

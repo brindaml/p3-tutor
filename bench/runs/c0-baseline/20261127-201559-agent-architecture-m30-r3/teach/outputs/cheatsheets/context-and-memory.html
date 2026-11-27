@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheat sheet: context and memory</title>
+<style>
+  :root { --bg:#fffdf8; --text:#1f1d1a; --rule:#e4dfd4; --accent:#9a4517; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#171614; --text:#e9e5dc; --rule:#36332e; --accent:#eaa77a; } }
+  body { margin:0 auto; max-width:40rem; padding:1.5rem 1rem; background:var(--bg); color:var(--text); font-family:Charter,Georgia,serif; line-height:1.5; }
+  a { color:var(--accent); }
+  table { width:100%; border-collapse:collapse; }
+  th,td { text-align:left; vertical-align:top; padding:.35rem .4rem; border-bottom:1px solid var(--rule); }
+  @media print { :root { --bg:#fff; --text:#000; --rule:#ccc; --accent:#000; } body { font-size:11pt; padding:0; } }
+</style>
+</head>
+<body>
+<main>
+<h1>Context and memory</h1>
+<p><a href="../lessons/0001-context-and-memory.html">Back to the lesson</a></p>
+<p><strong>Context window:</strong> limited room, in tokens, shared by system prompt, tool definitions, history, tool results and new output (<a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">source</a>).</p>
+<h2>Token arithmetic (no caching, nothing removed)</h2>
+<ul>
+<li>Next call's input = last call's input + its output + whatever is newly added.</li>
+<li>Fit: check each call's input plus room for output.</li>
+<li>Input cost: add the inputs of <em>all</em> calls. Output is priced too.</li>
+</ul>
+<h2>Where information lives</h2>
+<table>
+<tr><th>Need</th><th>Put it in</th></tr>
+<tr><td>Short rule for every chat</td><td>System prompt (enforce critical permissions in code too)</td></tr>
+<tr><td>This conversation's details</td><td>Session history, kept and supplied between steps</td></tr>
+<tr><td>Useful across visits</td><td>Saved note: dated, sourced, tied to the right user; load it later</td></tr>
+<tr><td>Official, changing facts</td><td>Look up the source with a tool</td></tr>
+<tr><td>Long manuals</td><td>Retrieve relevant chunks, labeled by manual and page</td></tr>
+</table>
+<h2>Crowded context</h2>
+<ul>
+<li><strong>Trim:</strong> drop old messages.</li>
+<li><strong>Clear:</strong> replace old bulky tool results with a marker.</li>
+<li><strong>Compact:</strong> summarize older history. Check that key facts survive.</li>
+</ul>
+<h2>Search</h2>
+<ul>
+<li><strong>Keyword:</strong> same words; good for exact codes.</li>
+<li><strong>Semantic:</strong> similar meaning; good for different wording.</li>
+<li><strong>Hybrid:</strong> both. Test with questions whose correct page you know (<a href="https://www.anthropic.com/engineering/contextual-retrieval">source</a>).</li>
+</ul>
+</main>
+</body>
+</html>

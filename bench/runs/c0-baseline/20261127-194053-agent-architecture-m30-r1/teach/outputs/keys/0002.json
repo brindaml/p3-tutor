@@ -1,0 +1,34 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": 5500,
+      "tolerance": 0,
+      "rationale": "Call inputs are 1,000, then 1,000 + 40 + 460 = 1,500, then 1,500 + 40 + 1,460 = 3,000, for a total of 5,500. Answering 3,000 gives only the last call's input and misses that usage adds up across calls."
+    },
+    {
+      "id": "q2",
+      "answer": "b",
+      "rationale": "With a stateless API the model has only what this call sends, so the question and its earlier request are missing. It does not recall them, and it does not run tools itself.",
+      "distractors": {"a": "M3", "c": "M4"}
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "A saved fact must be fetched and loaded into the new session's context. Neither the earlier processing, the file's existence nor training does this.",
+      "distractors": {"a": "M3", "b": "M3"}
+    },
+    {
+      "id": "q4",
+      "answer": "embedding search",
+      "accepted": ["embedding", "embeddings", "embedding-based search", "embedding based search", "semantic search", "semantic", "meaning-based search", "the embedding search", "embedding search."],
+      "rationale": "The two texts share no words but are related in meaning, which embedding (semantic) search can match and keyword search cannot."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "Symptoms and fix results are the state needed to continue; used raw pages are bulky and can be retrieved again. The other plans lose that state or free no room."
+    }
+  ]
+}

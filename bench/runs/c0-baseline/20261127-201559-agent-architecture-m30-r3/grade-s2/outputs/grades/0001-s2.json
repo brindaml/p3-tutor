@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right: d. What makes it an agent is the loop: the model picks an action, it gets run, and the result comes back for the next choice. A longer prompt or a bigger model can improve a single call, but neither one creates that loop."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right: c. The model only outputs a request, such as \"call check_calendar with the laser cutter and tomorrow's date.\" The program around the model reads that request and runs the function. Keep this in mind when you read the q4 feedback."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "The answer is b, a step limit. You chose to let it run longer, but 40 steps with the same edit and the same failing test give no sign of progress, and each extra step is another model call you pay for. It's tempting to think one more try will work. A stopping condition, meaning a rule in the program that ends the loop, such as a maximum number of steps, stops the run and reports what happened so a person can step in."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "4 is correct, but part of your reason isn't: the model never runs a tool. In call 1 it asks for check_calendar, then your program (the code around the model) runs it and sends the result back. Calls 2 and 3 work the same way for the other two tools, and call 4 writes the answer. You're right that in this quiz's setup each call asks for at most one tool. This matches what you picked in q2: the model outputs a request."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right, and you gave both parts: the result goes back as input, so the model can use it to decide what to do next. In your group chat picture, the program posts the reply and then calls the model again. The model has the result to work from only because it's in that input."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name helps, but it's only part of what the model gets. The program also gives it a description of what each tool does and the parameters it takes (the inputs, such as machine and date), and the model uses these to choose. For example, the names search_manuals and check_training_record alone don't say which one tells you whether a laser cutter requires training, so clear descriptions need to say what each tool covers."
+    }
+  ],
+  "summary": "You have the loop itself (q1), the fact that the model's output is a tool request (q2), and what happens to a tool's result (q5). The thing to work on first is who does what: the model asks, and your program runs the tool; your q4 reason had the model running it. Also fix q3 (a loop needs a stopping condition in the program) and q6 (the model chooses from the whole tool description, not only the name). Next step: without looking back, trace the q4 laser cutter request in two columns, 'model' and 'program', with every request, tool run and result in order, then mark where a step limit would be checked."
+}

@@ -1,0 +1,171 @@
+{
+  "duration_api_ms": 283689,
+  "stop_reason": "end_turn",
+  "session_id": "23c5b5a1-da9c-40af-958b-2f8cb34365de",
+  "total_cost_usd": 0.8011348250000001,
+  "usage": {
+    "input_tokens": 24,
+    "cache_creation_input_tokens": 84184,
+    "cache_read_input_tokens": 596572,
+    "output_tokens": 32178,
+    "output_tokens_details": {
+      "thinking_tokens": 6198
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 84184,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 990,
+        "cache_read_input_tokens": 94024,
+        "cache_creation_input_tokens": 1165,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1165
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 24,
+      "outputTokens": 32178,
+      "cacheReadInputTokens": 596572,
+      "cacheCreationInputTokens": 84184,
+      "webSearchRequests": 0,
+      "costUSD": 0.7182212,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6198,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 84184,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 96026,
+      "outputTokens": 13520,
+      "cacheReadInputTokens": 20365,
+      "cacheCreationInputTokens": 50779,
+      "webSearchRequests": 6,
+      "costUSD": 0.082913625,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4499,
+      "cacheCreationEphemeral5mInputTokens": 50779,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01FSTgMi1UwrgE6pHm5x4nHm",
+      "tool_input": {
+        "command": "mkdir -p assets lessons cheatsheets && sed -n '/<style>/,/<\\/style>/p' .claude/skills/teach/references/lesson-template.html | sed '1d;$d' > assets/lesson.css && wc -l assets/lesson.css",
+        "description": "Create shared lesson stylesheet from template"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01RaCRhQWp1DC6z6WbM6FAEX",
+      "tool_input": {
+        "command": "python3 -I - <<'E'\nimport re,json,html\ns=open('lessons/0001-context-and-memory.html').read()\nb=re.sub(r'(?is)<(script|style)\\b.*?</\\1>',' ',s)\nprint(len(html.unescape(re.sub(r'<[^>]+>',' ',b)).split()))\nfor f in ['quizzes/0002.json','keys/0002.json']: json.load(open(f))\nfor g in re.findall(r'<ul class=\"choices\">(.*?)</ul>',s,re.S):\n    print([len(x.split()) for x in re.findall(r'\">([^<]*)</button>',g)])\nfor i in json.load(open('quizzes/0002.json'))['items']:\n    if 'options' in i: print([(len(o['text'].split()),len(o['text'])) for o in i['options']])\nE",
+        "description": "Check word count, JSON validity and option lengths"
+      }
+    }
+  ],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 4,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 4
+    },
+    "started_in_background": 0,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 4,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "web-fetch": 4
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 40,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I wrote your 30-minute lesson on context and memory (O3): `lessons/0001-context-and-memory.html`. By the end, you should be able to take one makerspace request and decide:\n- what goes into the model's context\n- what your program keeps between steps\n- what to save between sessions\n- how to find the right manual page\n\nIt covers the context window and tokens, resending history (with a worked token count), saving and reloading memory, notes and compaction (summarizing a long history), and manual search. It has four diagrams, practice questions with feedback, and a memory plan for you to write yourself. That plan could be a starting point for your design review. The table of what to save, including reading training status from the official record, is my design advice rather than a standard.\n\n**About the sources:** the main one is Anthropic's [Effective context engineering for AI agents](https://anthropic.com/engineering/effective-context-engineering-for-ai-agents). I also used:\n- [Context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows)\n- [API primer](https://platform.claude.com/docs/en/claude_api_primer)\n- [Conversation state](https://developers.openai.com/api/docs/guides/conversation-state)\n- [Contextual retrieval](https://www.anthropic.com/engineering/contextual-retrieval)\n\nThe suggestion that a small set of manuals can go straight into the prompt is one company's rule of thumb from 2024. The page and manual sizes I worked out from it are rough, and the token counts in the worked example are made up. Test cost and answer quality on your own manuals. The lesson also suggests the [Hugging Face Beginners forum](https://discuss.huggingface.co/c/beginners/5) for feedback on your plan; leave out real student data.\n\nI also made a [cheat sheet](cheatsheets/context-and-memory.html). The lesson and cheat sheet share `assets/lesson.css`, so keep the folders together. I didn't run a word count or preview the pages in a browser, because the shell commands needed approval and didn't run. The 30-minute length is based on my plan.\n\n**Quiz 0002** has five questions and is ready when you are, ideally after a break. Your two attempts at quiz 0001 haven't been graded yet, and I can grade them if you like. Ask me about anything in the lesson that's unclear.\n\nOne question for your design: do you know roughly how many pages your machine manuals add up to? That will help you decide whether you need manual search at all.",
+  "ttft_ms": 1393,
+  "type": "result",
+  "duration_ms": 258627,
+  "uuid": "c0250923-59f3-41ef-9c4b-c89706ad6aaf",
+  "ttft_stream_ms": 781,
+  "time_to_request_ms": 265,
+  "first_content_frame_ms": 781,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 24,
+      "outputTokens": 32178,
+      "cacheReadInputTokens": 596572,
+      "cacheCreationInputTokens": 84184,
+      "webSearchRequests": 0,
+      "costUSD": 0.7182212,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6198,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 84184,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 96026,
+      "outputTokens": 13520,
+      "cacheReadInputTokens": 20365,
+      "cacheCreationInputTokens": 50779,
+      "webSearchRequests": 6,
+      "costUSD": 0.082913625,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4499,
+      "cacheCreationEphemeral5mInputTokens": 50779,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-25T09:27:13.347Z"
+}

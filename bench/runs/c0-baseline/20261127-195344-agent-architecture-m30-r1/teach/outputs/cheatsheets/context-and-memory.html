@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheat sheet: context and memory</title>
+<style>
+  body { max-width:40rem; margin:0 auto; padding:2rem 1.25rem; font-family:Charter,Georgia,serif; line-height:1.5; background:#fffdf8; color:#1f1d1a; }
+  a { color:#9a4517; }
+  table { width:100%; border-collapse:collapse; } th,td { text-align:left; vertical-align:top; padding:.4rem; border-bottom:1px solid #e4dfd4; }
+  @media (prefers-color-scheme: dark) { body { background:#171614; color:#e9e5dc; } a { color:#eaa77a; } th,td { border-color:#36332e; } }
+  @media print { body { background:#fff; color:#000; padding:0; } }
+</style>
+</head>
+<body>
+<h1>Context and memory</h1>
+<p><strong>Rule:</strong> besides its training, a model has only what is supplied as context.</p>
+<table>
+<tr><th>Information</th><th>Where it lives</th><th>How it reaches the model</th></tr>
+<tr><td>Instructions, tool definitions</td><td>Your program</td><td>Sent with each call</td></tr>
+<tr><td>This session's steps</td><td>History held by program or service</td><td>Supplied again, possibly trimmed</td></tr>
+<tr><td>Preferences, job notes</td><td>Per-student store</td><td>Loaded or fetched</td></tr>
+<tr><td>Manuals</td><td>Documents and search index</td><td>Relevant chunks retrieved</td></tr>
+<tr><td>Bookings, training status</td><td>Official records</td><td>Looked up when needed</td></tr>
+</table>
+<h2>Memory design</h2>
+<p>Write, store, read, update. Program code controls whose data can be loaded.</p>
+<h2>Size and cost</h2>
+<p><strong>Does it fit?</strong> Check one call's input plus output. <strong>What is billed?</strong> Under per-token pricing, add input over <em>all</em> calls and add output separately. Check caching and pricing rules.</p>
+<h2>When it goes wrong</h2>
+<ul>
+<li>Print the actual input and the retrieved chunks.</li>
+<li>Label chunks with machine, manual, section and page.</li>
+<li>In summaries, keep the goal, things tried, results, open problem and next step.</li>
+</ul>
+<p><a href="../lessons/0001-context-and-memory.html">Back to the lesson</a></p>
+</body>
+</html>
