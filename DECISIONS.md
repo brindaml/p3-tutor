@@ -26,7 +26,7 @@ They are about what you chose and what you saw, and the Builder and the Guide ne
 Of everything you changed while building `c1-skills`, which one change to a skill made the biggest difference, and how do you know?
 Name the round, and give the evidence: a rating that moved, a check in `REPORT.md` that moved, or a quote from an output before and after.
 
-TODO: your answer to prompt 1.
+One thing that really helped was adding in real world examples of things I enjoyed, so I made it pull examples from a reality tv show I enjoy so that I could relate the information broadly and see real world execution. It struggled to figure out a balance of too many different examples, like doing hockey and tv, so I made it just do the tv example and that worked really well. This was in Round 1 and Round 2, and I had rated it a 5 for its alignment with the learning goal because it didn't detract from the learning at all, it just added to it.
 
 ---
 
