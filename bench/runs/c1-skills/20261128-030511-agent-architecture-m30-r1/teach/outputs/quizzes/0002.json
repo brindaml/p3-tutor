@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in the makerspace assistant",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Jordan asks the makerspace assistant which 3D printer can print nylon, and it names one. In the same chat Jordan then types, \"Book that one.\" The model API is stateless and stores no history. Why can the new model call work out which printer Jordan means?",
+      "options": [
+        {"id": "a", "text": "The model held on to the printer's name after its last call"},
+        {"id": "b", "text": "The program sent the earlier messages again with the new one"},
+        {"id": "c", "text": "The last call updated the model's training with that printer's name"},
+        {"id": "d", "text": "The booking tool tells the model what was said in chats"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "For Jordan's next request, the instructions, tool descriptions and question total 1,300 input tokens. The model is called three times, and each call is sent everything so far. After call 1, a 50-token tool request and a 1,500-token result are added. After call 2, a 50-token tool request and a 250-token result are added. Call 3 gives the final answer. How many input tokens are sent across all three calls combined?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday Jordan told the assistant, \"I always work in metric units.\" On Thursday Jordan starts a new session. The team wants the assistant to use metric without being told again. What must the system do?",
+      "options": [
+        {"id": "a", "text": "Rely on the model to remember Jordan's preference from Monday's chat"},
+        {"id": "b", "text": "Pick a model with a larger context window before Monday's chat"},
+        {"id": "c", "text": "Save the preference on Monday, then load it into Thursday's context"},
+        {"id": "d", "text": "Tell the model on Monday to keep this preference in mind"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Jordan asks what error \"E-47\" on the laser cutter means. The manual has one passage containing \"E-47\". The assistant searches only by embedding similarity, and it keeps returning general troubleshooting passages instead of that one. Which change most directly targets this failure?",
+      "options": [
+        {"id": "a", "text": "Add keyword search and merge its results with the current ones"},
+        {"id": "b", "text": "Save Jordan's question in memory so it is available next visit"},
+        {"id": "c", "text": "Summarize the chat so far to free up room for the answer"},
+        {"id": "d", "text": "Tell the model to read the general passages much more carefully"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "During a very long session, the program summarizes the earlier conversation and continues in a fresh context with that summary. Later the assistant suggests a setting Jordan had already tried and rejected early in the session. In one sentence, what is the most likely cause?"
+    }
+  ]
+}

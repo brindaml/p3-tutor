@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflow or agent at SUR? In this made-up Vanderpump Rules story, Lisa Vanderpump is adding AI helpers to her restaurant, SUR; each helper is a language model plus the program (code) around it.",
+  "items": [
+    {
+      "id": "q1",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A SUR helper answers guests' reservation questions, and every question needs the same steps. Built as a fixed workflow, it makes exactly 2 model calls per question. Built as an agent, it averaged 5 model calls per question, and its answers were no better. At 120 questions a night, how many more model calls per night would the agent make than the workflow? Give a whole number.",
+      "unit": "model calls"
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "Every time a guest at SUR sends back a Pumptini, a helper's program does the same things in the same order: it has the model summarize the complaint, uses a tool to look up the bar ticket, then has the model draft an apology. Is this a workflow or an agent? Give your reason in one sentence."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "At closing, a SUR helper must prepare each server's tip-out report. Every report takes the same three steps in the same order: get the server's sales, apply the house tip-out rule, and write a short summary. The budget for model use is small. Which design is the better choice, for the best reason?",
+      "options": [
+        {"id": "a", "text": "A fixed workflow, since the steps never change between reports"},
+        {"id": "b", "text": "An agent, since any job that uses tools needs one"},
+        {"id": "c", "text": "An agent, since it can try a new order nightly"},
+        {"id": "d", "text": "Three separate agents, since every report has three separate steps"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A SUR helper handles messages to the host stand. The model reads each message and labels it \"reservation\", \"private party\" or \"complaint\". The program then runs the fixed list of steps that a developer wrote for that label. Which description of this helper is right?",
+      "options": [
+        {"id": "a", "text": "An agent, because the model's label changes which steps run"},
+        {"id": "b", "text": "An agent, because one message can go three different ways"},
+        {"id": "c", "text": "A workflow, because the model never makes any choice here"},
+        {"id": "d", "text": "A workflow, because each label leads down prewritten steps"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "After a messy private party at SUR, Lisa wants a helper to find out what went wrong. It can search booking notes, bar tickets, staff schedules and manager messages, but which to check, and how many searches are needed, depends on what each search turns up. Would a fixed workflow or an agent fit this job better? Give your reason in one sentence."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A SUR helper is an agent that handles private party requests, choosing its own steps as guests change dates, menus and headcounts. Lisa has one rule that must hold every single time: no party is confirmed until its deposit is recorded. The agent confirms parties with a confirm_party tool. Which design best enforces the rule?",
+      "options": [
+        {"id": "a", "text": "Put Lisa's rule in capital letters atop the agent's prompt"},
+        {"id": "b", "text": "Make the confirm_party code reject any party lacking a deposit"},
+        {"id": "c", "text": "Give the agent an optional tool for checking deposits first"},
+        {"id": "d", "text": "Switch to a larger model that follows written rules better"}
+      ]
+    }
+  ]
+}

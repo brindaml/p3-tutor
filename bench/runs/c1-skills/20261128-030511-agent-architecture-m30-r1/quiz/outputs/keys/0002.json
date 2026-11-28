@@ -1,0 +1,47 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": 360,
+      "tolerance": 0,
+      "rationale": "The agent makes 5 - 2 = 3 extra calls per question, and 3 x 120 = 360 a night, for answers that are no better. An answer of 600 is the agent's total rather than the difference, and 240 is the workflow's total."
+    },
+    {
+      "id": "q2",
+      "answer": "A workflow, because the program's code, not the model, decides which steps happen and in what order.",
+      "accepted": [
+        "workflow, because the code controls the order of the steps",
+        "Workflow: the steps are fixed in advance by the program, and the model never chooses what happens next.",
+        "It's a workflow since the code owns the control flow.",
+        "A workflow, because it follows a predefined path in the same order every time."
+      ],
+      "rationale": "Who owns the control flow decides it: here the path is predefined in code, even though there are two model calls and a tool. Full credit needs 'workflow' plus a reason that the steps or their order are fixed by the program, or that the model does not choose the next step. 'Workflow' with no reason is partial. 'Agent' because it uses a tool or calls the model more than once is wrong."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "The steps and their order are known and never change, so code can fix them, which is more predictable, easier to test and avoids spending model calls on deciding what to do next. Using tools does not make a job need an agent (b), a changing order is a risk here (c), and having three steps is no reason for several agents (d)."
+    },
+    {
+      "id": "q4",
+      "answer": "d",
+      "rationale": "This is routing, a workflow pattern: the model makes one bounded choice, the label, but the code defines the possible paths and every step on each. A model influencing a branch (a) or the existence of several paths (b) does not hand it the control flow, and choosing a label is still a choice the model makes (c)."
+    },
+    {
+      "id": "q5",
+      "answer": "An agent, because the steps can't be known in advance: each next search, and when to stop, depends on what earlier searches find, so the model has to decide as it goes.",
+      "accepted": [
+        "An agent, because the next step depends on what each search turns up.",
+        "Agent: you can't predict which searches or how many will be needed, so the model should decide them as it goes.",
+        "An agent, since the path can't be hardcoded ahead of time."
+      ],
+      "rationale": "Open-ended work whose number and order of steps cannot be predicted is where letting the model direct the process pays for its extra cost and lower predictability; a step limit is still sensible. Full credit needs 'agent' plus the reason that the steps cannot be fixed in advance or depend on earlier results. 'Agent' with no reason, or only because there are several tools, is partial."
+    },
+    {
+      "id": "q6",
+      "answer": "b",
+      "rationale": "A check inside the tool's code runs on every confirmation whatever the model decides, so the program owns this step while the agent still chooses the rest. A prompt rule (a) or a larger model (d) can make compliance likelier but cannot guarantee it, and an optional check (c) leaves the model free to skip it."
+    }
+  ]
+}

@@ -11,6 +11,7 @@ Each lesson gives the learner a single tangible win they can build on, in their 
 - Skim the earlier lessons and `cheatsheets/`, so this lesson links to them and builds on them instead of repeating them.
 - Start from `lesson-template.html` in this folder.
   Copy its CSS and script into the lesson so the file stands alone; if `assets/lesson.css` already exists, link it with `../assets/lesson.css` instead, so the lessons look like one course.
+  If that stylesheet has no `.example` rule or `--example` colors, copy them into it from the template.
   Put anything bigger that a second lesson could reuse, such as a simulator or an image, in `assets/` and link it with a relative path.
 
 ## Plan to the minutes
@@ -38,18 +39,32 @@ When no length is asked for, use the one `PREFERENCES.md` implies, or 15 minutes
 ## The shape of a lesson
 
 1. **Opening:** the title, the time, the win in one sentence ("By the end of this lesson you can ..."), and one or two sentences tying it to the mission.
-2. **Warm-up:** one or two recall questions on earlier material from the learning records, for spacing, with the answers revealed on demand.
-3. **Sections, one idea each,** in a steady rhythm: explain only the knowledge the skill needs, in plain words; show a concrete example, drawn from the examples `PREFERENCES.md` says the learner relates to; then check with a practice question that gives immediate feedback.
+2. **Warm-up:** one or two multiple-choice recall questions on earlier material from the learning records, for spacing, with feedback on every option.
+3. **Sections, one idea each,** in a steady rhythm: the next step of the lesson's one running everyday example, in an example box (see Examples below), then the knowledge the skill needs in plain words, a figure, and a multiple-choice practice question that gives immediate feedback.
 4. **Misconceptions where they bite:** name the common wrong ideas about this objective (from `NOTES.md`, the learning records, the keys' distractors and your sources), say why each is tempting, and show with an example why it is wrong.
-5. **Worked example, then practice:** a worked example step by step, then a similar task for the learner with the steps faded, and the solution on demand.
+5. **Worked example, then practice:** a worked example step by step, then a similar task for the learner with the steps faded, asked as a multiple-choice question about its result or next step, and the full solution on demand.
 6. **Summary:** the key ideas in three to five lines, and a prompt to explain the main idea in their own words before moving on.
 7. **Go further:** the primary source, the single most high-quality, high-trust resource you found, to read or watch next; two to four other sources you cited; and a community where they can test the skill (see Wisdom below).
 8. **Closing:** a reminder that they can ask you follow-up questions in the chat about anything unclear, and that a short quiz on this lesson is ready when they are.
+
+## Examples
+
+- Every section opens with an example from everyday life outside computer science, so a learner with no technical background can follow it: sports, games, TV, cooking, a shop, a team.
+- One world and one running scenario per lesson.
+  Before writing, choose a single example world for the whole lesson: the first one `PREFERENCES.md` ranks, unless another it names clearly fits the objective's core idea better.
+  Set up one concrete scenario in that world in the first section, with the same people, place and numbers, and let each later section extend that same scenario to show its idea, so the examples build on each other instead of starting over.
+  Never switch worlds between sections; a later lesson may pick a different world.
+- The example must work through the world's own mechanics: what really happens in it, such as line changes, the bench, the penalty box and the video room in hockey, or the cast, the reunion and the gossip that carries between seasons in a reality show.
+  Test each example by swapping the world's name for another; if it still works just as well, as a phone call with hockey words in it would, it is dressing rather than an example, so rewrite it around something that only happens in that world.
+- Make the example concrete and small, with names and numbers, then map each part of it back to the technical term in one or two sentences.
+- Put every such example in the template's example box (`<div class="box example">` with the label "Example"), which has a color of its own, so the learner can spot the examples at a glance and skip back to them.
+- Technical examples, such as code or a worked example on the topic itself, still belong in the lesson, after the everyday one; they go in their usual places, not in the example box.
 
 ## Knowledge and skills
 
 - Teach only the knowledge the skill needs, and make it easy to take in: plain words, one new term at a time, each defined where it first appears, using the terms in `GLOSSARY.md` when it exists.
 - Then make the skill stick with effortful practice: recall, worked examples followed by faded ones, and applying the idea to a new case.
+- Every practice question in the lesson, the warm-up recall and the faded task included, is multiple choice with three or four options, built as the template's `data-check` block, so the learner gets feedback at one click.
 - Every practice question gets feedback at once: why the right answer is right, and why each tempting wrong answer is wrong.
 - For a multiple-choice question, give every option the same number of words (and characters, if possible), vary which position holds the right one, and never give it away by formatting or order.
 - The lesson's practice questions are never the quiz items: the quiz checks what the practice built, so it needs fresh questions.
@@ -69,7 +84,9 @@ Keep the template's look and change the content, not the system.
 ## Figures and visualizations
 
 - Draw a figure wherever a picture shows the idea better than words: a mechanism, a process, a comparison, a quantity that changes.
-  Most lessons need two to four.
+  Give every section at least one figure, so a 30-minute lesson has five or more.
+- Break up the text: never more than three paragraphs in a row without a figure, an example box, a table or a practice question between them.
+- A figure can picture the everyday example too, such as the hockey bench beside the context window, when that makes the mapping easier to see.
 - Draw them as inline SVG: a `viewBox`, the labels as text inside the figure, colors from the template's CSS variables or `currentColor` so they work in dark mode, a `<title>`, and a `<figcaption>` that says what to notice.
 - Keep labels legible on a phone, where a figure shrinks to the screen's width: a `viewBox` about 640 units wide with labels of 18 units or more, or a vertical layout when there are many parts.
 - Use a table for a comparison, and a code block for code.
@@ -107,4 +124,5 @@ Check the lesson once against this list, and fix anything that fails:
 - The length is near the budget, judging by your section plan.
 - Every external link came from this session's search results or fetched pages.
 - The practice questions are not the quiz items, and the lesson gives away no quiz answer.
+- Every section opens with the same running everyday example, in one world and built from that world's own mechanics, in an example box, has at least one figure, and has a multiple-choice check; no run of more than three paragraphs goes without a break.
 - The lesson opens with the win and closes with the primary source and the reminder to ask you questions.

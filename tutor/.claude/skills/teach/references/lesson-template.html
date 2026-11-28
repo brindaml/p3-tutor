@@ -24,6 +24,8 @@
       --warn-soft: #f9eaec;
       --ok: #2f6b3a;
       --ok-soft: #e7f2e9;
+      --example: #1f5f8b;
+      --example-soft: #e6f0f8;
       --code-bg: #f3efe6;
       --serif: Charter, "Bitstream Charter", "Iowan Old Style", "Sitka Text", Cambria, Georgia, serif;
       --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -41,6 +43,8 @@
         --warn-soft: #2f1f22;
         --ok: #9fd3a8;
         --ok-soft: #1c2a1f;
+        --example: #8cc4ee;
+        --example-soft: #1a2530;
         --code-bg: #23211e;
       }
     }
@@ -74,6 +78,8 @@
     .mission .label { color: var(--accent); }
     .misconception { background: var(--warn-soft); border-left: 4px solid var(--warn); }
     .misconception .label { color: var(--warn); }
+    .example { background: var(--example-soft); border-left: 4px solid var(--example); }
+    .example .label { color: var(--example); }
     .worked { border: 1px solid var(--rule); }
     .worked ol { padding-left: 1.3rem; }
     .summary { border: 1px solid var(--rule); }
@@ -111,7 +117,8 @@
     }
     @media print {
       :root { --bg: #fff; --text: #000; --muted: #444; --rule: #ccc; --accent: #000; --accent-soft: #f2f2f2;
-              --warn: #000; --warn-soft: #f2f2f2; --ok: #000; --ok-soft: #fff; --code-bg: #f2f2f2; }
+              --warn: #000; --warn-soft: #f2f2f2; --ok: #000; --ok-soft: #fff;
+              --example: #000; --example-soft: #f2f2f2; --code-bg: #f2f2f2; }
       html { font-size: 11.5pt; }
       main { max-width: none; padding: 0; }
       nav.toc { display: none; }
@@ -150,15 +157,21 @@
     </ol>
   </nav>
 
-  <!-- Warm-up: recall from earlier lessons or learning records (spacing). Answers on demand. -->
+  <!-- Warm-up: recall from earlier lessons or learning records (spacing), as multiple choice with immediate feedback. -->
   <section id="warm-up">
     <h2>Warm-up <span class="section-time">2 min</span></h2>
-    <div class="check">
+    <div class="check" data-check>
       <span class="label">Recall</span>
       <p>{{A QUESTION ON SOMETHING THE LEARNER ALREADY LEARNED}}</p>
+      <ul class="choices">
+        <li><button type="button" data-correct="true" data-why="{{WHY THIS IS RIGHT, AND HOW IT CONNECTS TO TODAY}}">{{OPTION}}</button></li>
+        <li><button type="button" data-correct="false" data-why="{{WHY THIS IS TEMPTING BUT WRONG}}">{{OPTION}}</button></li>
+        <li><button type="button" data-correct="false" data-why="{{WHY THIS IS TEMPTING BUT WRONG}}">{{OPTION}}</button></li>
+      </ul>
+      <p class="feedback" aria-live="polite"></p>
       <details>
-        <summary>Check your answer</summary>
-        <p>{{THE ANSWER, AND HOW IT CONNECTS TO TODAY}}</p>
+        <summary>Show the answer</summary>
+        <p>{{THE RIGHT OPTION AND WHY, FOR READERS WITHOUT SCRIPTS OR ON PAPER}}</p>
       </details>
     </div>
   </section>
@@ -167,6 +180,13 @@
   <section id="s1">
     <h2>{{SECTION TITLE}} <span class="section-time">{{N}} min</span></h2>
     <p>{{EXPLANATION, WITH A NEW TERM DEFINED AT FIRST USE:}} <dfn>{{TERM}}</dfn> {{IS ...}} (<a href="{{SOURCE URL FROM THIS SESSION}}">{{SOURCE NAME}}</a>).</p>
+
+    <!-- The lesson's one running everyday example, outside computer science, in one world from PREFERENCES.md,
+         extended by each section and built from that world's own mechanics. Always in this box. -->
+    <div class="box example">
+      <span class="label">Example</span>
+      <p>{{A REAL-WORLD SCENE OUTSIDE COMPUTER SCIENCE THAT SHOWS THE IDEA, THEN ONE SENTENCE MAPPING EACH PART BACK TO THE TERM}}</p>
+    </div>
 
     <aside class="note">{{A SIDE REMARK THAT WOULD INTERRUPT THE MAIN LINE}}</aside>
 
@@ -232,9 +252,15 @@
         <li>{{STEP, WITH THE REASON FOR IT}}</li>
       </ol>
     </div>
-    <div class="check">
+    <div class="check" data-check>
       <span class="label">Your turn</span>
-      <p>{{A SIMILAR PROBLEM, WITH THE FIRST STEP GIVEN AND THE REST LEFT TO THE LEARNER}}</p>
+      <p>{{A SIMILAR PROBLEM, WITH THE FIRST STEP GIVEN; WHICH OF THESE IS THE RESULT, OR THE NEXT STEP?}}</p>
+      <ul class="choices">
+        <li><button type="button" data-correct="false" data-why="{{WHY THIS IS TEMPTING BUT WRONG}}">{{OPTION}}</button></li>
+        <li><button type="button" data-correct="false" data-why="{{WHY THIS IS TEMPTING BUT WRONG}}">{{OPTION}}</button></li>
+        <li><button type="button" data-correct="true" data-why="{{WHY THIS IS RIGHT}}">{{OPTION}}</button></li>
+      </ul>
+      <p class="feedback" aria-live="polite"></p>
       <details>
         <summary>Show a solution</summary>
         <p>{{THE SOLUTION, STEP BY STEP}}</p>

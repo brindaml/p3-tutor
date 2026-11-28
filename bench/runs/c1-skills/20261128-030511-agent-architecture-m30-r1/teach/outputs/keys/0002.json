@@ -1,0 +1,37 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "With a stateless API, the new call knows the earlier exchange only because the program sends it again. The model does not hold it between calls (a), and calls do not train it (c). Nothing in the question gives a booking tool the chat history (d).",
+      "distractors": {"a": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 7300,
+      "tolerance": 0,
+      "rationale": "Call 1 sends 1,300; call 2 sends 1,300 + 50 + 1,500 = 2,850; call 3 sends 2,850 + 50 + 250 = 3,150. The total is 7,300. An answer of 3,150 counts only the last call's input and misses that history is sent again on each call."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "A new session starts without Monday's history unless the system saves the information outside the context and loads it back. A larger window (b) does not carry anything across sessions, and asking or expecting the model to remember (a, d) saves nothing.",
+      "distractors": {"a": "M3", "d": "M3"}
+    },
+    {
+      "id": "q4",
+      "answer": "a",
+      "rationale": "An exact code is what keyword search is good at matching, and embedding search can miss it. The failure is that the right passage is never retrieved, so memory, summarizing or more careful reading of the wrong passages does not address it."
+    },
+    {
+      "id": "q5",
+      "answer": "The summary left out that Jordan had already tried and rejected that setting.",
+      "accepted": [
+        "Compaction dropped that detail from the summary.",
+        "The summary lost the information that the setting had been tried and rejected."
+      ],
+      "rationale": "Full credit: the summary (compaction) omitted or distorted the earlier rejection, so it was no longer in the model's context. Saying only that the model forgot, with no link to the summary, is partial. Blaming training is wrong."
+    }
+  ]
+}

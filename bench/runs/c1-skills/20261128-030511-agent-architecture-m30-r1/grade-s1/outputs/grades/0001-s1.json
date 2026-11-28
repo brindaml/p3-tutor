@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: the loop is what makes it an agent.\n\nPick an action → it gets run → the result comes back → pick again (until it stops)\n\n'A longer, more detailed prompt' is wrong because better instructions can change what one call says, but they don't create a loop.\n'Automatic memory of every earlier conversation' is wrong because memory isn't automatic, and remembering past chats isn't what defines an agent.\n'A larger model that can hold a whole textbook' is wrong because it can take in more at once, but one big call is still one call.\n\nThink hockey: a shift isn't one decision. You read the play, act, see what happens, and decide again."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Wrong. 'The calendar entries, which it read by opening the booking system on its own' is off because the model can't open anything: it takes text in and puts text out. It's tempting because a chat app can make the whole system look like one thing doing all the work.\n\nThe answer is 'a request naming check_calendar, with the laser cutter and tomorrow's date': the model writes the request, then your program runs the tool.\n'Nothing yet; the program notices it's about bookings' is wrong because the model decides which tool to call; the program carries out that choice.\n'The Python code inside check_calendar' is wrong because the model doesn't output or run the tool's code; the code already lives with your program.\n\nPicture a SUR server as the model and the kitchen as your program: the server writes the order ticket, the kitchen makes the food, and the plate comes back.\n\nModel: 'check_calendar, laser cutter, tomorrow' → Program: runs it → Result → Model"
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: a step limit ends a loop that's going nowhere and reports back so a person can step in.\n\nEdit → test fails → same edit → test fails → ... → LIMIT → stop and report\n\n'A larger context window' is wrong because all 40 steps are already in the context, so lack of room isn't the problem.\n'No change; it will eventually fix the bug' is wrong because nothing shows progress, and every extra step is another model call that costs money.\n'A longer system prompt to try much harder' is wrong because effort instructions don't guarantee a new approach and can't force the loop to stop.\n\nIt's like a reunion argument going in circles: someone has to call time. In your program, that's the step limit, and it also protects your sponsor's budget."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Wrong: it's 4 model calls, not 1. The broken step is 'it runs the 3 tools itself.' The model can't run tools. Each time it wants one, its output is a request and that call ends. Your program runs the tool, then calls the model again with the result.\n\nYou did get the sequence right: question first, three tools, then an answer.\n\nCall 1 → asks for check_calendar → program runs it\nCall 2 (gets that result) → asks for search_manuals → program runs it\nCall 3 (gets that result) → asks for check_training_record → program runs it\nCall 4 (gets that result) → writes the final answer\n\nAnswering 1 is tempting because the student asks once and gets one answer, so the middle is hidden. In hockey terms, that's seeing the goal on the highlight reel and missing the three passes before it. It matters for your design: this request takes 4 model calls, and each one adds to your model usage cost."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "Half there. 'It sends it back to the model' is exactly right for what happens. It doesn't answer why, and the question asked for both.\n\nThe why: the model needs the result in its next input to decide what to do next, either request another tool or write the final answer. The program has to call the model again with that result included. The model doesn't already have it, because the program is what ran the tool. Showing the raw result to the user instead would break the loop.\n\nTool result → into the model's next input → model chooses: another tool OR final answer\n\nVanderpump version: Ariana can't react to news until someone actually tells her. The result is the news.\n\nAlso notice that this answer has the program running the tool and reporting back. That's the right picture, and it clashes with your q4 answer, where the model runs the tools itself."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "Your first sentence is right, and it's a good explanation: the model gets a list of tools, each with a name and description, and picks the one that fits. In a full tool definition it also gets the parameters each tool takes. The description matters, because a name alone can mislead. A related wrong idea is that the model reads or runs the tool's code to choose; it doesn't need to, and your answer rightly relies on the descriptions.\n\nThe second sentence is wrong: the model does not remember on its own which tool it picked in earlier sessions. It has what it learned in training plus the text it's given. Using it doesn't automatically save anything. If you want past choices or a student's history to count, your system has to save it and put it into the model's input.\n\nEarlier session → (nothing carries over by itself)\nYour program saves a note → adds it to a later input → now the model can use it\n\nIt's tempting because people remember last time, and some chat apps seem to. Think of a Vanderpump cast member who never saw last season: unless someone fills them in, that history doesn't exist for them."
+    }
+  ],
+  "summary": "Blunt version: you've got the shape of an agent. You picked the loop as what defines it, picked a step limit to stop a stuck one, and explained that tools are chosen from their descriptions.\n\nThe main thing to fix is who does what. In q2 and q4 you had the model opening the booking system and running tools itself. It doesn't. (In q5 you did say the result gets sent back to the model, so keep building on that.)\n\nModel: asks or answers → Program: runs the tool → Result goes back to the model → repeat or stop\n\nAlso drop the idea that the model remembers earlier sessions by itself (q6), and when a question asks why, answer that part too (q5). This matters for your memory design.\n\nNext step: draw the q4 laser cutter request as two lanes, MODEL and PROGRAM. Put every action in one lane, number each model call, and mark where each tool result goes. No tool should ever run in the MODEL lane."
+}

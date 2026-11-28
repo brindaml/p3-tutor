@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: you picked the loop, where the model chooses actions, they get run and the results come back. Think of a hockey shift: you make a play, see where the puck ends up, then pick the next play, until something ends it. 'A longer, more detailed prompt' is wrong because it only changes the instructions going into a call, so by itself it still gets you one reply with no actions or results. 'Automatic memory of every earlier conversation' is wrong because memory isn't automatic and isn't what defines an agent: a system can run this loop while remembering nothing from past chats. 'A larger model' with a textbook-sized context window is wrong because it can take in more text per call, but that doesn't make it act in a loop."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct: the model outputs a request naming check_calendar, with the machine and date as arguments, and the program does the running. It's like a server at SUR writing an order ticket: the ticket says exactly what's wanted, but writing it doesn't cook the food (hold on to this for question 4). 'Calendar entries it read by opening the booking system' is wrong because the model only takes in text and puts out text, so it can't open the system itself. 'Nothing yet; the program notices it's about bookings' is wrong because the model decides which tool to call, and the program carries out that request. 'The Python code inside check_calendar' is wrong because the model doesn't send or run the tool's code; it only names the tool and supplies arguments, and the code already lives with the program."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "This one is wrong. 'No change; it will eventually fix the bug' assumes that more steps mean more progress and that the agent doesn't need a way to be stopped, but after 40 steps of the same edit and the same failing test there's no sign of progress, and every extra model call costs money. It's tempting because persistence often pays off for people, and agents can recover from a failed try, but nothing here shows this one is changing course. The answer is the step limit that stops the loop and reports what happened: like two castmates stuck replaying the same fight, someone has to call it, and the report lets a person on your team take over. 'A model with a larger context window' is wrong because all 40 steps are already in context, so seeing them isn't the problem. 'A longer system prompt telling it to try much harder' is wrong because it adds no new information about the bug and gives the program no way to end the loop."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "4 is the right number, and you correctly counted a separate call for the final answer. Your reason is wrong, though: the model doesn't run any tool itself, not even one per call. In each of the first three calls it only writes a request; the program runs the tool and passes the result into the next call, just as you picked in question 2. Call 1 → asks for check_calendar → program runs it. Call 2 → asks for search_manuals → program runs it. Call 3 → asks for check_training_record → program runs it. Call 4 → writes the final answer. It's 4 because there are three requests plus one answer, and 'one tool per call' is the rule this question set for requests. A typical wrong answer is 1, as if the model ran all three tools inside a single call; it's tempting because a chat window can make the whole job look like one reply. Picture a SUR server: they put in the order, and the kitchen does the cooking."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct, with both halves: what happens (the result goes back in as input) and why (so the model can figure out what to do next). Your group chat picture works well: the model takes its next turn with that reply in front of it. To make it precise, the program calls the model again, and that next step could be another tool request or the final answer. The input for that call needs to include the earlier conversation along with the new result, like scrolling up through the whole chat, because the model doesn't carry it over between calls on its own. The tempting mistakes are to stop at showing the result to the user, or to assume the model already has it; the program has it until it sends it back."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "You're partly right: the name is something the model sees, and a clear one like check_calendar is a useful clue. But it isn't the whole story. The program gives the model each tool's name, a description of what it does and the parameters it takes, and the model picks the one that fits what it needs. A name alone can mislead: does check_calendar show machine bookings, a student's class schedule or makerspace opening hours? It's like a hockey roster that lists only nicknames: you'd be guessing who plays what position. The tempting wrong turn is thinking a good name explains itself, because you already know what you meant by it, but the model only has the text it's given. It never needs to see the code, so write each description to say what the tool does, when to use it and what to pass in."
+    }
+  ],
+  "summary": "You've got the core loop: you identified what makes an agent, what the model outputs when it wants a tool, and why the result goes back to it. The one thing to work on next is who does what: in question 4 you said the model runs the tools, but it only requests them and the program runs them, even though you got this right in question 2. Also fix two other gaps: an agent needs a stopping condition such as a step limit (question 3), and the model chooses tools from their descriptions and parameters as well as their names (question 6). Next step: redraw your laser cutter trace in two lanes, MODEL and PROGRAM, put every action in one lane, and mark where a step limit would stop the loop."
+}

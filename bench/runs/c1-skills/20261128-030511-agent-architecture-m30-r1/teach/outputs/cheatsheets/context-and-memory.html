@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheat sheet: context and memory</title>
+<style>
+  :root { --bg:#fffdf8; --text:#1f1d1a; --rule:#e4dfd4; --accent:#9a4517; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#171614; --text:#e9e5dc; --rule:#36332e; --accent:#eaa77a; } }
+  body { max-width:44rem; margin:0 auto; padding:1.5rem; background:var(--bg); color:var(--text); font-family:Charter,Georgia,serif; line-height:1.45; }
+  h1,h2 { line-height:1.2; } h2 { font-size:1.1rem; color:var(--accent); }
+  table { width:100%; border-collapse:collapse; } th,td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--rule); }
+  a { color:var(--accent); }
+  @media print { :root { --bg:#fff; --text:#000; --rule:#ccc; --accent:#000; } body { font-size:10.5pt; } }
+</style>
+</head>
+<body>
+<h1>Context and memory</h1>
+<p>From <a href="../lessons/0001-context-and-memory.html">lesson 1</a>.</p>
+<h2>In the window</h2>
+<p>System prompt + tool descriptions + messages + tool results + the reply. All share one token limit.</p>
+<h2>Where does each thing go?</h2>
+<table>
+<tr><th>Information</th><th>Route into context</th></tr>
+<tr><td>Rules, tool descriptions</td><td>Sent on every call</td></tr>
+<tr><td>This session's steps</td><td>History carried forward (usually your program resends it)</td></tr>
+<tr><td>Preferences, project notes</td><td>Saved outside, dated, loaded later</td></tr>
+<tr><td>Training status, calendar</td><td>Official record, checked by tool when needed</td></tr>
+<tr><td>Manual content</td><td>Retrieved chunks, labelled with manual and page</td></tr>
+</table>
+<h2>Crowded window</h2>
+<p>Clear used tool results (keep the source) → compact (summaries can lose detail) → trim with care. Protect the goal, key constraints and actions already taken.</p>
+<h2>Search</h2>
+<p>Keyword: exact codes and words. Embedding: similar meaning. Hybrid: both. Test whether the right page is returned.</p>
+<h2>Cost</h2>
+<p>Total input = the sum of what <em>each</em> call is sent, not just the size of the last one.</p>
+<h2>Memory safety</h2>
+<p>Separate each student's memory (my recommendation). Validate file paths, filter sensitive data, cap size, expire old files (<a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool">memory tool docs</a>).</p>
+</body>
+</html>

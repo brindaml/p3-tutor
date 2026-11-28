@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 21547,
+  "stop_reason": "end_turn",
+  "session_id": "f5b6643a-dcd0-4399-8900-c29df5a5884e",
+  "total_cost_usd": 0.1406881,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 25109,
+    "cache_read_input_tokens": 122021,
+    "output_tokens": 2803,
+    "output_tokens_details": {
+      "thinking_tokens": 961
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 25109,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 447,
+        "cache_read_input_tokens": 34844,
+        "cache_creation_input_tokens": 1270,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1270
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 2803,
+      "cacheReadInputTokens": 122021,
+      "cacheCreationInputTokens": 25109,
+      "webSearchRequests": 0,
+      "costUSD": 0.1406881,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 961,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 25109,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Tool calling means the model **asks** for something to be done, and a separate program actually **does** it.\n\n**Picture SUR on *Vanderpump Rules*.** A server doesn't cook. They put in a ticket, say \"goat cheese balls, table 12,\" the kitchen makes the food, and it comes back out. The server then decides what to do next.\n\n- **Server:** the model\n- **Ticket:** the tool call (which tool, plus the details)\n- **Kitchen and food runner:** the program around the model\n- **What comes out of the kitchen:** the result\n\n**Model** writes a ticket\n⬇️\n**Program** does the work\n⬇️\n**Result** goes back to the model\n⬇️\n**Model** writes another ticket *or* gives its final answer\n\nHow does it know what it can order? It gets a \"menu\" with each tool's **name, what it does, and what details it needs**. It chooses using that information, so clear descriptions matter when you design your makerspace assistant.\n\n**Where the analogy breaks:** a real server remembers table 12 and can peek into the kitchen. The model can't see inside the tools, and each time it's called, it works from what it's handed then, including earlier tickets and results.\n\n**Your turn:** a student says, \"Book me the 3D printer Monday at 2.\" In server terms, what goes on the ticket, who makes the booking, and how does the model find out whether it worked?",
+  "ttft_ms": 842,
+  "type": "result",
+  "duration_ms": 21779,
+  "uuid": "2231bcd5-caf3-4c38-9a1a-e30645953a1d",
+  "ttft_stream_ms": 674,
+  "time_to_request_ms": 83,
+  "first_content_frame_ms": 674,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 2803,
+      "cacheReadInputTokens": 122021,
+      "cacheCreationInputTokens": 25109,
+      "webSearchRequests": 0,
+      "costUSD": 0.1406881,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 961,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 25109,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-25T09:27:13.950Z"
+}

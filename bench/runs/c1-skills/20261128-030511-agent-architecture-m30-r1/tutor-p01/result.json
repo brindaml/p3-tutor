@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 10527,
+  "stop_reason": "end_turn",
+  "session_id": "896363a7-7121-4d0a-9229-e5f674582620",
+  "total_cost_usd": 0.087664,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 16455,
+    "cache_read_input_tokens": 81080,
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "thinking_tokens": 283
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 16455,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 171,
+        "cache_read_input_tokens": 26868,
+        "cache_creation_input_tokens": 592,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 592
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 1372,
+      "cacheReadInputTokens": 81080,
+      "cacheCreationInputTokens": 16455,
+      "webSearchRequests": 0,
+      "costUSD": 0.087664,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 283,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16455,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I don't give quiz answers while you're still taking the quiz, including practice retakes.\n\nPicture the agent at step 40, about to start step 41, and work through these:\n\n1. What happens during that next step, and what do the model and the program each do?\n2. For each option, what would be different at step 41, or in the steps after it? What would stay the same?\n3. The stem asks for a safeguard in the **agent program**. What would you need it to protect your team from here?\n\nWhich one do you pick, and why? Once it's graded, I'll go through q3 with you.",
+  "ttft_ms": 989,
+  "type": "result",
+  "duration_ms": 10712,
+  "uuid": "0d55aa9d-81cb-4bd7-b919-01cea02d9663",
+  "ttft_stream_ms": 620,
+  "time_to_request_ms": 77,
+  "first_content_frame_ms": 620,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 1372,
+      "cacheReadInputTokens": 81080,
+      "cacheCreationInputTokens": 16455,
+      "webSearchRequests": 0,
+      "costUSD": 0.087664,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 283,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16455,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-25T09:27:13.950Z"
+}
