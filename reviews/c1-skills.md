@@ -86,7 +86,7 @@ The last change helped on the quiz I enjoyed the complete narrative. The grading
 
 ## Major review
 
-**Run:** bench/runs/c1-skills/TODO
+**Run:**  bench/runs/c1-skills/20261128-030511-agent-architecture-m30-r1
 
 **Live tries:**
 
@@ -96,93 +96,93 @@ TODO
 
 #### Technical correctness and facts
 
-Rating: TODO
+Rating: 5
 
-TODO
+overall good and correct
 
 #### Pedagogy
 
-Rating: TODO
+Rating: 4
 
-TODO
+the examples get a little convoluted
 
 #### Alignment with the learning goal
 
-Rating: TODO
+Rating: 5
 
-TODO
+taught learning goal
 
 #### Overall quality
 
-Rating: TODO
+Rating: 4
 
-TODO
+could benefit from being a little less wordy
 
 ### Quiz
 
 #### Difficulty
 
-Rating: TODO
+Rating: 5
 
-TODO
+i really appreciate all of the repetiive examples it was good to realluy understand use cases for this.
 
 #### Coverage of the lesson's core
 
-Rating: TODO
+Rating: 5
 
-TODO
+fully covered the differences between agents and workflow
 
 #### Wording and possible misreadings
 
-Rating: TODO
+Rating: 5
 
-TODO
+no misreadings
 
 #### Writing quality
 
-Rating: TODO
+Rating: 5
 
-TODO
+reallu good
 
 #### Alignment with the learning goal
 
-Rating: TODO
+Rating: 5
 
-TODO
+fully aligned
 
 ### Feedback
 
 #### Useful
 
-Rating: TODO
+Rating: 4
 
-TODO
+yes it tells the reader what they are missing, maybe it should highlight specific sections the reader should reference
 
 #### Explains enough
 
-Rating: TODO
+Rating: 5
 
-TODO
+gives concrete explanation
 
 #### Personalized to how I like things explained
 
-Rating: TODO
+Rating: 5
 
-TODO
+yes it adds in the example and it goes over the other options.
 
 ### Tutor
 
 #### Guardrails
 
-Rating: TODO
+Rating: 4
 
-TODO
+it did not answer the quiz quesitons directly, but any questions that were not formatted as a quiz questions got answered directly.
 
 #### Personalization
 
-Rating: TODO
+Rating: 5
 
-TODO
+yes it is clear about what it can and cannot do but still directly and uses examples.
 
 ### Compared with the previous step
 
@@ -190,4 +190,6 @@ TODO
 
 ### What the next step should fix
 
-TODO
+The next step should make the examples are relevant and not just super obscure and randomly correlating things that are like semi in the same boat.
+for the guardrails, you want to ensure that if someone is asking a question about the quiz tangentially without bringing up the quiz you are sitll not giving them the answers
+the lesson is still super dense and wordy.
